@@ -116,7 +116,7 @@ def add_site(
     setup_content=None,
     default_language="en",
     portal_timezone="UTC",
-    distribution_name="volto",
+    distribution="volto",
     **kwargs,
 ):
     """Add a PloneSite to the context."""
@@ -138,7 +138,7 @@ def add_site(
     answers.update(kwargs)
     site = site_api._create_site(
         context=context,
-        distribution_name=distribution_name,
+        distribution_name=distribution,
         answers=answers,
         profile_id=profile_id,
     )
