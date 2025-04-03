@@ -1,4 +1,5 @@
 from portalbrasil.core import PACKAGE_NAME
+from Products.CMFPlone.TypesTool import TypesTool
 from Products.GenericSetup.tool import SetupTool
 
 import pytest
@@ -25,6 +26,7 @@ class TestSetupDependencies:
     def _setup(self, portal_class):
         self.portal = portal_class
         self.setup_tool: SetupTool = portal_class.portal_setup
+        self.types_tool: TypesTool = portal_class.portal_types
 
     @pytest.mark.parametrize(
         "profile",
@@ -38,10 +40,9 @@ class TestSetupDependencies:
             "plone.app.theming:default",
             "plone.app.users:default",
             "plone.outputfilters:default",
-            "plone.portlet.collection:default",
-            "plone.portlet.static:default",
             "plone.protect:default",
             "plone.staticresources:default",
+            "plone.app.contenttypes:default",
             "plone.restapi:default",
             "plone.volto:default",
             "plonegovbr.brfields:default",
@@ -50,3 +51,22 @@ class TestSetupDependencies:
     def test_installed(self, profile: str):
         """Test if a profile is installed."""
         assert self.setup_tool.getLastVersionForProfile(profile) is not None
+
+    @pytest.mark.parametrize(
+        "portal_type,title,klass",
+        [
+            ("Plone Site", "Plone Site", "Products.CMFPlone.Portal.PloneSite"),
+            ("Document", "Page", "plone.volto.content.FolderishDocument"),
+            ("News Item", "News Item", "plone.volto.content.FolderishNewsItem"),
+            ("Event", "Event", "plone.volto.content.FolderishEvent"),
+            ("Image", "Image", "plone.app.contenttypes.content.Image"),
+        ],
+    )
+    def test_portal_type(self, portal_type: str, title: str, klass: str):
+        """Test if a portal_type is installed."""
+        from plone.dexterity.fti import DexterityFTI
+
+        fti = self.types_tool.getTypeInfo(portal_type)
+        assert isinstance(fti, DexterityFTI)
+        assert fti.title == title
+        assert fti.klass == klass

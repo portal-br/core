@@ -11,10 +11,9 @@
     <dependency>profile-plone.app.theming:default</dependency>
     <dependency>profile-plone.app.users:default</dependency>
     <dependency>profile-plone.outputfilters:default</dependency>
-    <dependency>profile-plone.portlet.collection:default</dependency>
-    <dependency>profile-plone.portlet.static:default</dependency>
     <dependency>profile-plone.protect:default</dependency>
     <dependency>profile-plone.staticresources:default</dependency>
+    <dependency>profile-plone.app.contenttype:default</dependency>
     <dependency>profile-plone.restapi:default</dependency>
     <dependency>profile-plone.volto:default</dependency>
     <dependency>profile-plonegovbr.brfields:default</dependency>
