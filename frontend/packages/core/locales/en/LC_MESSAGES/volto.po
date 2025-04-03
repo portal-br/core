@@ -10,3 +10,8 @@ msgstr ""
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. Default: "List with images"
+#: index
+msgid "List with images"
+msgstr ""
