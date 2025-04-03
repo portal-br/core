@@ -149,7 +149,10 @@ class MigrationTool(BaseTool):
         info["PortalBrasil"] = self.getSoftwareVersion()
         info["PortalBrasil Instance"] = self.getInstanceVersion()
         info["PortalBrasil File System"] = self.getFileSystemVersion()
+        info["plone.restapi"] = get_dist("plone.restapi").version
+        info["plone.volto"] = get_dist("plone.volto").version
         info["CMFPlone"] = get_dist("Products.CMFPlone").version
+        info["Plone"] = info["CMFPlone"]
         info["CMF"] = get_dist("Products.CMFCore").version
         info["Debug mode"] = "Yes" if getConfiguration().debug_mode else "No"
         info["PIL"] = get_dist("pillow").version
