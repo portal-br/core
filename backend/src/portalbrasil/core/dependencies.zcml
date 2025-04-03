@@ -1,0 +1,12 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!-- List all packages you depend here -->
+  <include package="zope.app.locales" />
+  <include package="Products.CMFCore" />
+  <include package="Products.GenericSetup" />
+  <include package="Products.CMFPlone" />
+  <include package="plone.restapi" />
+  <include package="plone.volto" />
+  <include package="plonegovbr.brfields" />
+
+</configure>

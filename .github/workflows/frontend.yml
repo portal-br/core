@@ -1,0 +1,73 @@
+name: Frontend CI
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: true
+        type: string
+      volto-version:
+        required: true
+        type: string
+
+defaults:
+  run:
+    working-directory: ./frontend
+
+jobs:
+  code-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ inputs.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Enable corepack
+        run: |
+          npm i -g corepack@latest
+          corepack enable
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Linting
+        id: lint
+        if: ${{ success() || failure() }}
+        run: make lint
+
+      - name: i18n sync
+        id: i18n
+        if: ${{ success() || failure() }}
+        run: make ci-i18n
+
+      - name: Unit Tests
+        id: unit
+        if: ${{ success() || failure() }}
+        run: make test
+
+      - name: Report
+        if: ${{ success() || failure() }}
+        run: |
+          echo '# Code Analysis' >> $GITHUB_STEP_SUMMARY
+          echo '| Test | Status |' >> $GITHUB_STEP_SUMMARY
+          echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+          echo '| Lint | ${{ steps.lint.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| i18n | ${{ steps.i18n.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| Unit Tests | ${{ steps.unit.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,27 @@
+---
+name: '⬆️ PortalBrasil: Core -  Atualizar componente'
+description: 'Requisita a atualização de um ou mais componentes do PortalBrasil: Core'
+labels: ['Interno', 'precisa: avaliação']
+projects:
+  - portalbr/4
+type: Feature
+assignees:
+  - 'ericof'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Por favor, nos informe o máximo de detalhes para que possamos agilizar a avaliação.
+
+  - type: textarea
+    id: componentes
+    attributes:
+      label: Componentes
+      description: Informe quais componentes necessitam ser atualizados, um por linha
+      placeholder: |
+        | Componente | Frontend / Backend | Versão Atual | Nova versão |
+        | --- | --- | --- | --- |
+        <!-- | Plone | Backend | x.y.z | x.y.z | -->
+        <!-- | Volto | Frontend | x.y.z | x.y.z | -->
+    validations:
+      required: true

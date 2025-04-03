@@ -1,0 +1,74 @@
+name: "PortalBrasil: Core CI"
+
+on:
+  push:
+    paths:
+      - "backend/**"
+      - "frontend/**"
+      - ".github/workflows/backend.yml"
+      - ".github/workflows/frontend.yml"
+      - ".github/workflows/main.yml"
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: "22.x"
+  python-version: "3.12"
+
+jobs:
+  config:
+    runs-on: ubuntu-latest
+    outputs:
+      backend: ${{ steps.filter.outputs.backend }}
+      frontend: ${{ steps.filter.outputs.frontend }}
+      python-version: ${{ env.python-version }}
+      plone-version: ${{ steps.vars.outputs.plone-version }}
+      volto-version: ${{ steps.vars.outputs.volto-version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compute several vars needed for the CI
+        id: vars
+        run: |
+          echo "plone-version=$(cat backend/version.txt)" >> $GITHUB_OUTPUT
+          python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("volto-version=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
+
+      - name: Test vars
+        run: |
+          echo 'plone-version=${{ steps.vars.outputs.plone-version }}'
+          echo 'volto-version=${{ steps.vars.outputs.volto-version }}'
+
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            backend:
+              - 'backend/**'
+              - '.github/workflows/backend.yml'
+            frontend:
+              - 'frontend/**'
+              - '.github/workflows/frontend.yml'
+
+  backend:
+    uses: ./.github/workflows/backend.yml
+    needs:
+        - config
+    with:
+        python-version: ${{ needs.config.outputs.python-version }}
+        plone-version: ${{ needs.config.outputs.plone-version }}
+    if: ${{ needs.config.outputs.backend == 'true' }}
+    permissions:
+      contents: read
+      packages: write
+
+  frontend:
+    uses: ./.github/workflows/frontend.yml
+    needs:
+        - config
+    with:
+        node-version: ${{ needs.config.outputs.node-version }}
+        volto-version: ${{ needs.config.outputs.volto-version }}
+    if: ${{ needs.config.outputs.frontend == 'true' }}
+    permissions:
+      contents: read
+      packages: write
