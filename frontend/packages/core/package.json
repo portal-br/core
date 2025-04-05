@@ -35,11 +35,14 @@
     "@kitconcept/volto-separator-block",
     "@kitconcept/volto-button-block",
     "@plonegovbr/volto-vlibras",
+    "@plonegovbr/volto-network-block",
     "@kitconcept/volto-light-theme"
   ],
   "dependencies": {
+    "@plone/components": "workspace:*",
     "@kitconcept/volto-light-theme": "6.0.0-alpha.21",
     "@kitconcept/volto-social-blocks": "1.0.0-alpha.4",
+    "@plonegovbr/volto-network-block": "1.0.0",
     "@plonegovbr/volto-vlibras": "0.4.1",
     "@mbarde/volto-image-crop-widget": "0.5.1",
     "volto-form-block": "^3.11.0"

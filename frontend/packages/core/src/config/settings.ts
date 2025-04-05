@@ -4,6 +4,8 @@ import type { ConfigType } from '@plone/registry';
 import Libras from '@plonegovbr/volto-vlibras/components/Libras';
 
 export default function install(config: ConfigType) {
+  // Idioma em português
+  config.settings.defaultLanguage = 'pt-br';
   config.settings.image_crop_aspect_ratios = [
     {
       label: '16:9',
@@ -26,6 +28,19 @@ export default function install(config: ConfigType) {
       match: '',
       component: Libras,
       props: {},
+    },
+  ];
+
+  // Expanders
+  config.settings.apiExpanders = [
+    ...config.settings.apiExpanders,
+    {
+      match: '',
+      GET_CONTENT: ['inherit'],
+      querystring: {
+        'expand.inherit.behaviors':
+          'portalbrasil.header,portalbrasil.footer,portalbrasil.social_networks',
+      },
     },
   ];
 

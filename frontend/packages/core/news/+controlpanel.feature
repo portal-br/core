@@ -1,0 +1,1 @@
+Altera o componente VersionOverview do `@plone/volto` para exibir informações do PortalBrasil @ericof

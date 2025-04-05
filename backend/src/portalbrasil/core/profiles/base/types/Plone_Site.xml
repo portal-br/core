@@ -35,11 +35,15 @@
             purge="false"
   >
     <element value="plone.dublincore" />
-    <element value="plone.richtext" />
     <element value="plone.relateditems" />
     <element value="plone.locking" />
     <element value="plone.excludefromnavigation" />
     <element value="plone.tableofcontents" />
+    <element value="portalbrasil.header" />
+    <element value="portalbrasil.footer" />
+    <element value="portalbrasil.social_networks" />
+    <element value="volto.blocks" />
+    <element value="volto.preview_image" />
   </property>
 
   <!-- View information -->
@@ -47,14 +51,7 @@
   <property name="default_view">listing_view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
-  <property name="view_methods">
-    <element value="album_view" />
-    <element value="event_listing" />
-    <element value="full_view" />
-    <element value="listing_view" />
-    <element value="summary_view" />
-    <element value="tabular_view" />
-  </property>
+  <property name="view_methods" />
 
   <!-- Method aliases -->
   <alias from="(Default)"
