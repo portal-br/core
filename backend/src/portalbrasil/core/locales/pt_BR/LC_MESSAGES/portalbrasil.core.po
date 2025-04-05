@@ -32,23 +32,23 @@ msgstr ""
 
 #: portalbrasil/core/behaviors/footer.py:28
 msgid "Footer customizations"
-msgstr ""
+msgstr "Rodapé"
 
 #: portalbrasil/core/behaviors/footer.py:98
 msgid "Footer links"
-msgstr ""
+msgstr "Links"
 
 #: portalbrasil/core/behaviors/footer.py:45
 msgid "Footer logos"
-msgstr ""
+msgstr "Logos de rodapé"
 
 #: portalbrasil/core/behaviors/footer.py:72
 msgid "Footer logos container width"
-msgstr ""
+msgstr "Largura do container para as logos"
 
 #: portalbrasil/core/behaviors/footer.py:85
 msgid "Footer logos size"
-msgstr ""
+msgstr "Tamanho das logos"
 
 #: portalbrasil/core/profiles.zcml:21
 msgid "Perfil com as dependências necessárias ao funcionamento do PortalBrasil"
@@ -80,33 +80,33 @@ msgstr ""
 
 #: portalbrasil/core/behaviors/header.py:64
 msgid "Site Actions"
-msgstr ""
+msgstr "Ações globais"
 
 #: portalbrasil/core/behaviors/networks.py:27
 msgid "Social Networks"
-msgstr ""
+msgstr "Redes sociais"
 
 #. Default: "If enabled, the fat menu will be shown."
 #: portalbrasil/core/behaviors/header.py:48
 msgid "help_enable_fat_menu"
-msgstr ""
+msgstr "Caso habilitada, o menu colapsável será exibido."
 
 #. Default: "The site actions are the links that show in the top right side of the header."
 #: portalbrasil/core/behaviors/header.py:65
 msgid "help_header_actions"
-msgstr ""
+msgstr "Ações globais são exibidas no canto superior esquerdo do cabeçalho."
 
 #. Default: "If the site or subsite has a logo, please upload it here."
 #: portalbrasil/core/behaviors/header.py:39
 msgid "help_site_logo"
-msgstr ""
+msgstr "Caso o site ou sub-site tenha um logo, altere-o aqui."
 
 #. Default: "Enable Fat Menu"
 #: portalbrasil/core/behaviors/header.py:47
 msgid "label_enable_fat_menu"
-msgstr ""
+msgstr "Habilitar menu colapsável"
 
 #. Default: "Site Logo"
 #: portalbrasil/core/behaviors/header.py:38
 msgid "label_site_logo"
-msgstr ""
+msgstr "Logo do site"

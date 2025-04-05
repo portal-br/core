@@ -19,64 +19,64 @@ msgstr ""
 #. Default: "Add link"
 #: components/Widgets/schema/socialNetworksSchema
 msgid "Add link"
-msgstr ""
+msgstr "Adiciona link"
 
 #. Default: "Add-ons"
 #: components/Controlpanels/VersionOverview
 msgid "Add-ons"
-msgstr ""
+msgstr "Complementos"
 
 #. Default: "Home"
 #: components/Logo/Logo
 msgid "Home"
-msgstr ""
+msgstr "Capa"
 
 #. Default: "Link"
 #: components/Widgets/schema/socialNetworksSchema
 msgid "Link"
-msgstr ""
+msgstr "Link"
 
 #. Default: "List with images"
 #: index
 msgid "List with images"
-msgstr ""
+msgstr "Lista com imagens"
 
 #. Default: "Logo of"
 #: components/Logo/Logo
 msgid "Logo of"
-msgstr ""
+msgstr "Logo de"
 
 #. Default: "Network"
 #: components/Widgets/schema/socialNetworksSchema
 msgid "Network"
-msgstr ""
+msgstr "Rede"
 
 #. Default: "No addons found"
 #: components/Controlpanels/VersionOverview
 msgid "No addons found"
-msgstr ""
+msgstr "Nenhum complemento foi encontrado"
 
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/socialNetworksSchema
 msgid "Open in a new tab"
-msgstr ""
+msgstr "Abrir em uma nova aba"
 
 #. Default: "Powered by PortalBrasil, Plone & Python"
 #: components/Footer/Footer
 msgid "Powered by PortalBrasil, Plone & Python"
-msgstr ""
+msgstr "Criado com PortalBrasil, Plone & Python"
 
 #. Default: "Target"
 #: components/Widgets/schema/socialNetworksSchema
 msgid "Target"
-msgstr ""
+msgstr "Endereço"
 
 #. Default: "Title"
 #: components/Widgets/schema/socialNetworksSchema
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #. Default: "You are running in 'debug mode'. This mode is intended for sites that are under development. This allows many configuration changes to be immediately visible, but will make your site run more slowly. To turn off debug mode, stop the server, set 'debug-mode=off' in your buildout.cfg, re-run bin/buildout and then restart the server process."
 #: components/Controlpanels/VersionOverview
 msgid "Warning Regarding debug mode"
-msgstr ""
+msgstr "Você está rodando em 'modo de depuração'. Esse modo é recomendado apenas para sites ainda em desenvolvimento. Ele permite várias alterações de configuração serem aplicadas imediatamente, mas faz seu site rodar de maneira mais lenta."
