@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-04-03 19:57+0000\n"
+"POT-Creation-Date: 2025-04-05 19:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,6 +14,42 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: portalbrasil.core\n"
 
+#: portalbrasil/core/behaviors/header.py:29
+msgid "Cabeçalho"
+msgstr ""
+
+#: portalbrasil/core/behaviors/configure.zcml:19
+msgid "Configuração para cabeçalhos de sites e sub-sites"
+msgstr ""
+
+#: portalbrasil/core/behaviors/configure.zcml:31
+msgid "Configuração para redes sociais para sites e sub-sites"
+msgstr ""
+
+#: portalbrasil/core/behaviors/configure.zcml:25
+msgid "Configuração para rodapé de sites e sub-sites"
+msgstr ""
+
+#: portalbrasil/core/behaviors/footer.py:28
+msgid "Footer customizations"
+msgstr ""
+
+#: portalbrasil/core/behaviors/footer.py:98
+msgid "Footer links"
+msgstr ""
+
+#: portalbrasil/core/behaviors/footer.py:45
+msgid "Footer logos"
+msgstr ""
+
+#: portalbrasil/core/behaviors/footer.py:72
+msgid "Footer logos container width"
+msgstr ""
+
+#: portalbrasil/core/behaviors/footer.py:85
+msgid "Footer logos size"
+msgstr ""
+
 #: portalbrasil/core/profiles.zcml:21
 msgid "Perfil com as dependências necessárias ao funcionamento do PortalBrasil"
 msgstr ""
@@ -22,10 +58,55 @@ msgstr ""
 msgid "Perfil com configurações base para projetos baseados no PortalBrasil"
 msgstr ""
 
+#: portalbrasil/core/behaviors/configure.zcml:31
+msgid "PortalBrasil: Configuração de Redes Sociais"
+msgstr ""
+
+#: portalbrasil/core/behaviors/configure.zcml:25
+msgid "PortalBrasil: Configuração de Rodapé"
+msgstr ""
+
+#: portalbrasil/core/behaviors/configure.zcml:19
+msgid "PortalBrasil: Configuração de cabeçalho"
+msgstr ""
+
 #: portalbrasil/core/profiles.zcml:13
 msgid "PortalBrasil: Configurações base"
 msgstr ""
 
 #: portalbrasil/core/profiles.zcml:21
 msgid "PortalBrasil: Dependências obrigatórias"
+msgstr ""
+
+#: portalbrasil/core/behaviors/header.py:64
+msgid "Site Actions"
+msgstr ""
+
+#: portalbrasil/core/behaviors/networks.py:27
+msgid "Social Networks"
+msgstr ""
+
+#. Default: "If enabled, the fat menu will be shown."
+#: portalbrasil/core/behaviors/header.py:48
+msgid "help_enable_fat_menu"
+msgstr ""
+
+#. Default: "The site actions are the links that show in the top right side of the header."
+#: portalbrasil/core/behaviors/header.py:65
+msgid "help_header_actions"
+msgstr ""
+
+#. Default: "If the site or subsite has a logo, please upload it here."
+#: portalbrasil/core/behaviors/header.py:39
+msgid "help_site_logo"
+msgstr ""
+
+#. Default: "Enable Fat Menu"
+#: portalbrasil/core/behaviors/header.py:47
+msgid "label_enable_fat_menu"
+msgstr ""
+
+#. Default: "Site Logo"
+#: portalbrasil/core/behaviors/header.py:38
+msgid "label_site_logo"
 msgstr ""
