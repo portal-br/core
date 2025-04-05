@@ -1532,6 +1532,9 @@ importers:
 
   packages/core:
     dependencies:
+      '@eeacms/volto-pdf-block':
+        specifier: 1.0.12
+        version: 1.0.12(react@18.2.0)(webpack@5.90.1)
       '@kitconcept/volto-light-theme':
         specifier: 6.0.0-alpha.21
         version: 6.0.0-alpha.21(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.0(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.8(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.11.0(@babel/runtime@7.26.10)(@popperjs/core@2.11.8)(@types/react-dom@18.3.5(@types/react@18.3.19))(@types/react@18.3.19)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.5.2)(react@18.2.0))(classnames@2.5.1)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.5(@types/react@18.3.19))(@types/react@18.3.19)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.8(prettier@3.2.5))
@@ -2442,6 +2445,9 @@ packages:
   '@eeacms/volto-accordion-block@10.4.6':
     resolution: {integrity: sha512-IZfAg8By1dZA2SSr4MNu2gFCs0F67/ZMAlpdqkevSMvkBREjny97cEFtMjkhGyOc3MBTp1vd0TtqvL3cN1GehQ==}
 
+  '@eeacms/volto-pdf-block@1.0.12':
+    resolution: {integrity: sha512-06laYl6WTQn7QBI/kaK/TXXQ6cayhgg8gBAYKtSeL0Ir4rus4kJucLqD+oZ9E+rYtnj1OjHzr8tH8lAEBukdHg==}
+
   '@eeacms/volto-widget-theme-picker@2.0.0':
     resolution: {integrity: sha512-f3+B7ATw0EoehO2rqU9NZoJABBtFUGy+zDGynm7MCSsfWcy6yafmCsOw2MKssBFXkgBicfpLLdE8ESEEITy6aA==}
 
@@ -3152,6 +3158,11 @@ packages:
 
   '@microsoft/tsdoc@0.14.2':
     resolution: {integrity: sha512-9b8mPpKrfeGRuhFH5iO1iwCLeIIsV6+H1sRfxbkoGXIyQE2BTsPd9zqSqQJ+pv5sJ/hT5M1zvOFL02MnEezFug==}
+
+  '@mikecousins/react-pdf@5.5.0':
+    resolution: {integrity: sha512-SLRu5l0ZazZL9ShKcTaRvEcmw7Ar9k5XVRFGa8mZmPXGiKYxh2x4unctebdDo9Vrhg9VVzzU6XE8q4vTALWUqw==}
+    peerDependencies:
+      react: '>=16'
 
   '@napi-rs/wasm-runtime@0.2.7':
     resolution: {integrity: sha512-5yximcFK5FNompXfJFoWanu5l8v1hNGqNHh9du1xETp9HWk/B/PzvchX55WYOPaIeNglG8++68AAiauBAtbnzw==}
@@ -10668,6 +10679,9 @@ packages:
     resolution: {integrity: sha512-Z3lTE9pLaJF47NyMhd4ww1yFTAP8YhYI8SleJiHzM46Fgpm5cnNzSl9XfzFNqbaz+VlJrIj3fXQ4DeN1Rjm6cw==}
     engines: {node: '>=18'}
 
+  node-ensure@0.0.0:
+    resolution: {integrity: sha512-DRI60hzo2oKN1ma0ckc6nQWlHU69RH6xN0sjQTjMpChPfTYvKZdcQFfdYK2RWbJcKyUizSIy/l8OTGxMAM1QDw==}
+
   node-fetch@1.7.3:
     resolution: {integrity: sha512-NhZ4CsKx7cYm2vSrBAr2PvFOe6sWDf0UYLRqA6svUYg7+/TSfVAu49jYC4BvQ4Sms9SZgdqGBgroqfDhJdTyKQ==}
 
@@ -11197,6 +11211,11 @@ packages:
 
   pause-stream@0.0.11:
     resolution: {integrity: sha512-e3FBlXLmN/D1S+zHzanP4E/4Z60oFAa3O051qt1pxa7DEJWKAyil6upYVXCWadEnuoqa4Pkc9oUx9zsxYeRv8A==}
+
+  pdfjs-dist@2.2.228:
+    resolution: {integrity: sha512-W5LhYPMS2UKX0ELIa4u+CFCMoox5qQNQElt0bAK2mwz1V8jZL0rvLao+0tBujce84PK6PvWG36Nwr7agCCWFGQ==}
+    peerDependencies:
+      webpack: ^3.0.0 || ^4.0.0-alpha.0 || ^4.0.0
 
   pend@1.2.0:
     resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
@@ -12634,6 +12653,10 @@ packages:
 
   scheduler@0.23.2:
     resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
+
+  schema-utils@0.4.7:
+    resolution: {integrity: sha512-v/iwU6wvwGK8HbU9yi3/nhGzP0yGSuhQMzL6ySiec1FSrZZDkhm4noOSWzrNFo/jEc+SJY6jRTwuwbSXJPDUnQ==}
+    engines: {node: '>= 4'}
 
   schema-utils@2.7.1:
     resolution: {integrity: sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==}
@@ -14391,6 +14414,12 @@ packages:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
     engines: {node: '>=0.10.0'}
 
+  worker-loader@2.0.0:
+    resolution: {integrity: sha512-tnvNp4K3KQOpfRnD20m8xltE3eWh89Ye+5oj7wXEEHKac1P4oZ6p9oTj8/8ExqoSBnk9nu5Pr4nKfQ1hn2APJw==}
+    engines: {node: '>= 6.9.0 || >= 8.9.0'}
+    peerDependencies:
+      webpack: ^3.0.0 || ^4.0.0-alpha.0 || ^4.0.0
+
   worker-rpc@0.1.1:
     resolution: {integrity: sha512-P1WjMrUB3qgJNI9jfmpZ/htmBEjFh//6l/5y8SD9hg1Ef5zTTVVoRjTrTEzPrNBQvmhMxkoTsjOXN10GWU7aCg==}
 
@@ -15644,6 +15673,13 @@ snapshots:
     dependencies:
       '@eeacms/volto-widget-theme-picker': 2.0.0
 
+  '@eeacms/volto-pdf-block@1.0.12(react@18.2.0)(webpack@5.90.1)':
+    dependencies:
+      '@mikecousins/react-pdf': 5.5.0(react@18.2.0)(webpack@5.90.1)
+    transitivePeerDependencies:
+      - react
+      - webpack
+
   '@eeacms/volto-widget-theme-picker@2.0.0': {}
 
   '@emnapi/core@1.3.1':
@@ -16463,6 +16499,13 @@ snapshots:
       resolve: 1.19.0
 
   '@microsoft/tsdoc@0.14.2': {}
+
+  '@mikecousins/react-pdf@5.5.0(react@18.2.0)(webpack@5.90.1)':
+    dependencies:
+      pdfjs-dist: 2.2.228(webpack@5.90.1)
+      react: 18.2.0
+    transitivePeerDependencies:
+      - webpack
 
   '@napi-rs/wasm-runtime@0.2.7':
     dependencies:
@@ -26361,6 +26404,8 @@ snapshots:
       emojilib: 2.4.0
       skin-tone: 2.0.0
 
+  node-ensure@0.0.0: {}
+
   node-fetch@1.7.3:
     dependencies:
       encoding: 0.1.13
@@ -27032,6 +27077,12 @@ snapshots:
   pause-stream@0.0.11:
     dependencies:
       through: 2.3.8
+
+  pdfjs-dist@2.2.228(webpack@5.90.1):
+    dependencies:
+      node-ensure: 0.0.0
+      webpack: 5.90.1
+      worker-loader: 2.0.0(webpack@5.90.1)
 
   pend@1.2.0: {}
 
@@ -29076,6 +29127,11 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
+  schema-utils@0.4.7:
+    dependencies:
+      ajv: 6.12.6
+      ajv-keywords: 3.5.2(ajv@6.12.6)
+
   schema-utils@2.7.1:
     dependencies:
       '@types/json-schema': 7.0.15
@@ -30036,6 +30092,15 @@ snapshots:
       webpack: 5.90.1(esbuild@0.25.1)
     optionalDependencies:
       esbuild: 0.25.1
+
+  terser-webpack-plugin@5.3.14(webpack@5.90.1):
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.25
+      jest-worker: 27.5.1
+      schema-utils: 4.3.0
+      serialize-javascript: 6.0.2
+      terser: 5.39.0
+      webpack: 5.90.1
 
   terser-webpack-plugin@5.3.6(esbuild@0.25.1)(webpack@5.90.1(esbuild@0.25.1)):
     dependencies:
@@ -31215,6 +31280,37 @@ snapshots:
 
   webpack-virtual-modules@0.6.2: {}
 
+  webpack@5.90.1:
+    dependencies:
+      '@types/eslint-scope': 3.7.7
+      '@types/estree': 1.0.6
+      '@webassemblyjs/ast': 1.14.1
+      '@webassemblyjs/wasm-edit': 1.14.1
+      '@webassemblyjs/wasm-parser': 1.14.1
+      acorn: 8.14.1
+      acorn-import-assertions: 1.9.0(acorn@8.14.1)
+      browserslist: 4.24.4
+      chrome-trace-event: 1.0.4
+      enhanced-resolve: 5.18.1
+      es-module-lexer: 1.6.0
+      eslint-scope: 5.1.1
+      events: 3.3.0
+      glob-to-regexp: 0.4.1
+      graceful-fs: 4.2.11
+      json-parse-even-better-errors: 2.3.1
+      loader-runner: 4.3.0
+      mime-types: 2.1.35
+      neo-async: 2.6.2
+      schema-utils: 3.3.0
+      tapable: 2.2.1
+      terser-webpack-plugin: 5.3.14(webpack@5.90.1)
+      watchpack: 2.4.2
+      webpack-sources: 3.2.3
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - uglify-js
+
   webpack@5.90.1(esbuild@0.25.1):
     dependencies:
       '@types/eslint-scope': 3.7.7
@@ -31384,6 +31480,12 @@ snapshots:
       execa: 5.1.1
 
   word-wrap@1.2.5: {}
+
+  worker-loader@2.0.0(webpack@5.90.1):
+    dependencies:
+      loader-utils: 1.4.2
+      schema-utils: 0.4.7
+      webpack: 5.90.1
 
   worker-rpc@0.1.1:
     dependencies:

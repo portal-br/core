@@ -27,6 +27,7 @@
     "release-alpha": "release-it --preRelease=alpha"
   },
   "addons": [
+    "@eeacms/volto-pdf-block",
     "@eeacms/volto-accordion-block",
     "@kitconcept/volto-slider-block",
     "@kitconcept/volto-social-blocks",
@@ -45,6 +46,7 @@
     "@plonegovbr/volto-network-block": "1.0.0",
     "@plonegovbr/volto-vlibras": "0.4.1",
     "@mbarde/volto-image-crop-widget": "0.5.1",
+    "@eeacms/volto-pdf-block": "1.0.12",
     "volto-form-block": "^3.11.0"
   },
   "peerDependencies": {
