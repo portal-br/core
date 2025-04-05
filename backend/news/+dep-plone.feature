@@ -1,0 +1,1 @@
+Adiciona Products.CMFPlone 6.1.1 como dependência @ericof

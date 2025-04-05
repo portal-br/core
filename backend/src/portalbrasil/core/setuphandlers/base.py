@@ -49,10 +49,18 @@ def import_final_steps(context: SetupTool):
 
     # Set out default profile version.
     setProfileVersion(site)
-
-    # Install our dependencies
+    # Install our core dependencies
     st = api.portal.get_tool("portal_setup")
-    st.runAllImportStepsFromProfile("profile-Products.CMFPlone:dependencies")
+    st.runAllImportStepsFromProfile("profile-portalbrasil.core:dependencies")
+
+    # Install package dependencies
+    for profile_id in (
+        "plone.app.contenttypes:default",
+        "plone.restapi:default",
+        "plone.volto:default",
+        "plonegovbr.brfields:default",
+    ):
+        st.runAllImportStepsFromProfile(f"profile-{profile_id}")
 
     setuphandlers.replace_local_role_manager(site)
     setuphandlers.addCacheHandlers(site)

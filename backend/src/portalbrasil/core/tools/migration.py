@@ -5,7 +5,10 @@ from contextlib import contextmanager
 from io import StringIO
 from plone import api
 from plone.base.interfaces import IMigrationTool
+from portalbrasil.core import FRIENDLY_NAME
 from portalbrasil.core import __version__
+from portalbrasil.core.utils import gs as gs_utils
+from portalbrasil.core.utils import packages as pkg_utils
 from Products.CMFCore.utils import registerToolInterface
 from Products.CMFPlone.MigrationTool import Addon
 from Products.CMFPlone.MigrationTool import AddonList
@@ -16,7 +19,6 @@ from ZODB.POSException import ConflictError
 from zope.interface import implementer
 
 import logging
-import pkg_resources
 import sys
 import transaction
 
@@ -66,6 +68,7 @@ ADDON_LIST = AddonList([
     Addon(profile_id="plone.staticresources:default"),
     Addon(profile_id="plone.volto:default"),
     Addon(profile_id="plonetheme.barceloneta:default"),
+    Addon(profile_id="plonegovbr.brfields:default"),
 ])
 
 
@@ -90,17 +93,12 @@ class MigrationTool(BaseTool):
             self._version = False
 
         if version == "unknown":
-            if _version:
-                # Instance version was not pkg_resources compatible...
-                _version = _version.replace("devel (svn/unreleased)", "dev")
-                _version = _version.rstrip("-final")
-                _version = _version.rstrip("final")
-                _version = _version.replace("alpha", "a")
-                _version = _version.replace("beta", "b")
-                _version = _version.replace("-", ".")
-                version = _version
-            else:
-                version = setup.getVersionForProfile(self.profile)
+            version = (
+                gs_utils.sanitize_gs_version(_version)
+                if _version
+                else setup.getVersionForProfile(self.profile)
+            )
+            version = setup.getVersionForProfile(self.profile)
             self.setInstanceVersion(version)
         return version
 
@@ -141,22 +139,22 @@ class MigrationTool(BaseTool):
 
     def coreVersions(self) -> dict[str, Any]:
         # Useful core information.
-        info = {}
-        get_dist = pkg_resources.get_distribution
-        info["Python"] = sys.version
-        info["Zope"] = get_dist("Zope").version
-        info["Platform"] = sys.platform
-        info["PortalBrasil"] = self.getSoftwareVersion()
-        info["PortalBrasil Instance"] = self.getInstanceVersion()
-        info["PortalBrasil File System"] = self.getFileSystemVersion()
-        info["plone.restapi"] = get_dist("plone.restapi").version
-        info["plone.volto"] = get_dist("plone.volto").version
-        info["CMFPlone"] = get_dist("Products.CMFPlone").version
-        info["Plone"] = info["CMFPlone"]
-        info["CMF"] = get_dist("Products.CMFCore").version
-        info["Debug mode"] = "Yes" if getConfiguration().debug_mode else "No"
-        info["PIL"] = get_dist("pillow").version
-        return info
+        plone_version = pkg_utils.package_version("Products.CMFPlone")
+        return {
+            "Python": sys.version,
+            "Zope": pkg_utils.package_version("Zope"),
+            "Platform": sys.platform,
+            f"{FRIENDLY_NAME}": self.getSoftwareVersion(),
+            f"{FRIENDLY_NAME} Instance": self.getInstanceVersion(),
+            f"{FRIENDLY_NAME} File System": self.getFileSystemVersion(),
+            "plone.restapi": pkg_utils.package_version("plone.restapi"),
+            "plone.volto": pkg_utils.package_version("plone.volto"),
+            "CMFPlone": plone_version,
+            "Plone": plone_version,
+            "CMF": pkg_utils.package_version("Products.CMFCore"),
+            "Debug mode": "Yes" if getConfiguration().debug_mode else "No",
+            "PIL": pkg_utils.package_version("pillow"),
+        }
 
     def _upgrade_run_steps(
         self, steps: list, logger: logging.Logger, swallow_errors: bool

@@ -31,6 +31,7 @@ classifiers = [
 ]
 dependencies = [
     "Products.CMFPlone==6.1.1",
+    "plone.distribution==3.1.2",
     "plone.api",
     "plone.restapi",
     "plone.volto",
@@ -264,7 +265,7 @@ constraint-dependencies = [
     "plone.classicui==1.0.0",
     "plone.contentrules==3.0.1",
     "plone.dexterity==3.0.7",
-    "plone.distribution==3.1.1",
+    "plone.distribution==3.1.2",
     "plone.event==2.0.2",
     "plone.exportimport==1.1.0",
     "plone.folder==4.0.1",

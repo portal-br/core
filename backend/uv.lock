@@ -183,7 +183,7 @@ constraints = [
     { name = "plone-classicui", specifier = "==1.0.0" },
     { name = "plone-contentrules", specifier = "==3.0.1" },
     { name = "plone-dexterity", specifier = "==3.0.7" },
-    { name = "plone-distribution", specifier = "==3.1.1" },
+    { name = "plone-distribution", specifier = "==3.1.2" },
     { name = "plone-event", specifier = "==2.0.2" },
     { name = "plone-exportimport", specifier = "==1.1.0" },
     { name = "plone-folder", specifier = "==4.0.1" },
@@ -2951,7 +2951,7 @@ wheels = [
 
 [[package]]
 name = "plone-distribution"
-version = "3.1.1"
+version = "3.1.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jsonschema" },
@@ -2969,9 +2969,9 @@ dependencies = [
     { name = "z3c-unconfigure" },
     { name = "zope" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b7/2a/2286ebbb34b3384984b04b3b1aaa0829d9ca80bc8c04314b04f811f130e7/plone_distribution-3.1.1.tar.gz", hash = "sha256:393659d0381fb913b54095e46370a2a1f76a33f796e30d4d4a7f93875bd6b6be", size = 629402 }
+sdist = { url = "https://files.pythonhosted.org/packages/24/32/71e956449b79728ec785f1e940cb77c54e129964602261dc9c07822aa0fc/plone_distribution-3.1.2.tar.gz", hash = "sha256:6c1ebf15c84f995594191880b62293331784e0ec1a68a36b88c967c943d89b95", size = 629389 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b1/cb/27e4c0739c51d87e8afb245626f0dd7f3b752c90551b5abd74ca46501d3e/plone_distribution-3.1.1-py3-none-any.whl", hash = "sha256:b44f389386ffa5620bdcb82abeb753496a2ef2ff221c19e108914d2aa312c68e", size = 603803 },
+    { url = "https://files.pythonhosted.org/packages/6d/56/341dd436e6e70c21d5d228806990f01404893d67565497385b1c2c39c771/plone.distribution-3.1.2-py3-none-any.whl", hash = "sha256:94af666258c1484defa9563f0b8d242bb9fbc7de3695166292b52f4c38ea1a31", size = 603807 },
 ]
 
 [[package]]
@@ -3746,6 +3746,7 @@ name = "portalbrasil-core"
 source = { editable = "." }
 dependencies = [
     { name = "plone-api" },
+    { name = "plone-distribution" },
     { name = "plone-restapi" },
     { name = "plone-volto" },
     { name = "plonegovbr-brfields" },
@@ -3782,6 +3783,7 @@ test = [
 requires-dist = [
     { name = "plone-api" },
     { name = "plone-app-testing", marker = "extra == 'test'" },
+    { name = "plone-distribution", specifier = "==3.1.2" },
     { name = "plone-restapi" },
     { name = "plone-restapi", extras = ["test"], marker = "extra == 'test'" },
     { name = "plone-volto" },

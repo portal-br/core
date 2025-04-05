@@ -8,6 +8,7 @@ import logging
 __version__ = "1.0.0a0"
 
 PACKAGE_NAME = "portalbrasil.core"
+FRIENDLY_NAME = "PortalBrasil"
 
 _ = MessageFactory(PACKAGE_NAME)
 
