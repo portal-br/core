@@ -1547,6 +1547,9 @@ importers:
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
+      '@plonegovbr/volto-brwidgets':
+        specifier: 1.0.0-alpha.3
+        version: 1.0.0-alpha.3(prop-types@15.8.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       '@plonegovbr/volto-network-block':
         specifier: 1.0.0
         version: 1.0.0(@plone/volto@18.11.0(@babel/runtime@7.26.10)(@popperjs/core@2.11.8)(@types/react-dom@18.3.5(@types/react@18.3.19))(@types/react@18.3.19)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
@@ -3559,6 +3562,14 @@ packages:
   '@plone/volto@18.11.0':
     resolution: {integrity: sha512-xEPUeCbQEKImmhHgstv9A5Zpx9wBApfPfo+LCAl45OqOJzpQKmaCqLq1izcjxgj5SXDnIpSqXGKUvzXF9fRcLQ==}
     engines: {node: ^20 || ^22}
+
+  '@plonegovbr/volto-brwidgets@1.0.0-alpha.3':
+    resolution: {integrity: sha512-Q3oFFBgHnZFFgQQNl8vCITwzgVSmaWWp29qmRFxm3Er0A4msQ4rTcojSxqF03YnE5CHTgssJa49y+4iB+zrjKA==}
+    peerDependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0
+      semantic-ui-react: 2.1.5
 
   '@plonegovbr/volto-network-block@1.0.0':
     resolution: {integrity: sha512-k96tMET6miRrUeV4XuOohPPSUbmvRxk/x6SEecHUYBcMnewUWx8jZtApPXm2vOjuR3kvI9ejOuy4kDzt7GpoGQ==}
@@ -17213,6 +17224,13 @@ snapshots:
       - seamless-immutable
       - supports-color
       - utf-8-validate
+
+  '@plonegovbr/volto-brwidgets@1.0.0-alpha.3(prop-types@15.8.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      semantic-ui-react: 2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
   '@plonegovbr/volto-network-block@1.0.0(@plone/volto@18.11.0(@babel/runtime@7.26.10)(@popperjs/core@2.11.8)(@types/react-dom@18.3.5(@types/react@18.3.19))(@types/react@18.3.19)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))':
     dependencies:
