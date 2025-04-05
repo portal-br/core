@@ -6,7 +6,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import isEmpty from 'lodash/isEmpty';
 
-import voltoPackageJson from '../../../../../core/packages/volto/package.json';
+import voltoPackageJson from '@plone/volto/../package.json';
 import projectPackageJson from '../../../../../package.json';
 
 import { defineMessages, useIntl } from 'react-intl';
