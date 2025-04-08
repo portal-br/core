@@ -26,6 +26,11 @@ msgstr "Adiciona link"
 msgid "Add-ons"
 msgstr "Complementos"
 
+#. Default: "Criado com PortalBrasil, Plone & Python"
+#: components/Footer/Footer
+msgid "Criado com PortalBrasil, Plone & Python"
+msgstr "Criado com PortalBrasil, Plone & Python"
+
 #. Default: "Home"
 #: components/Logo/Logo
 msgid "Home"
@@ -56,15 +61,15 @@ msgstr "Rede"
 msgid "No addons found"
 msgstr "Nenhum complemento foi encontrado"
 
+#. Default: "O PortalBrasil é mantido pela comunidade"
+#: components/Footer/Footer
+msgid "O PortalBrasil é mantido pela comunidade"
+msgstr "O PortalBrasil é mantido pela comunidade"
+
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/socialNetworksSchema
 msgid "Open in a new tab"
 msgstr "Abrir em uma nova aba"
-
-#. Default: "Powered by PortalBrasil, Plone & Python"
-#: components/Footer/Footer
-msgid "Powered by PortalBrasil, Plone & Python"
-msgstr "Criado com PortalBrasil, Plone & Python"
 
 #. Default: "Target"
 #: components/Widgets/schema/socialNetworksSchema

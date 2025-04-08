@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-04-05T19:28:35.119Z\n"
+"POT-Creation-Date: 2025-04-08T18:05:51.036Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -21,6 +21,11 @@ msgstr ""
 #. Default: "Add-ons"
 #: components/Controlpanels/VersionOverview
 msgid "Add-ons"
+msgstr ""
+
+#. Default: "Criado com PortalBrasil, Plone & Python"
+#: components/Footer/Footer
+msgid "Criado com PortalBrasil, Plone & Python"
 msgstr ""
 
 #. Default: "Home"
@@ -53,14 +58,14 @@ msgstr ""
 msgid "No addons found"
 msgstr ""
 
+#. Default: "O PortalBrasil é mantido pela comunidade"
+#: components/Footer/Footer
+msgid "O PortalBrasil é mantido pela comunidade"
+msgstr ""
+
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/socialNetworksSchema
 msgid "Open in a new tab"
-msgstr ""
-
-#. Default: "Powered by PortalBrasil, Plone & Python"
-#: components/Footer/Footer
-msgid "Powered by PortalBrasil, Plone & Python"
 msgstr ""
 
 #. Default: "Target"

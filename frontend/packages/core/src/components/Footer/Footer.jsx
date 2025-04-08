@@ -35,17 +35,19 @@ const Footer = () => {
         </div>
         <a className="item powered-by" href="https://plone.org">
           <FormattedMessage
-            id="Powered by PortalBrasil, Plone & Python"
-            defaultMessage="Powered by PortalBrasil, Plone & Python"
+            id="Criado com PortalBrasil, Plone & Python"
+            defaultMessage="Criado com PortalBrasil, Plone & Python"
           />
         </a>
         <br />
         <div className="footer-branding">
-          Made with{' '}
-          <span role="img" aria-label="love" style={{ color: 'red' }}>
-            ❤️
-          </span>{' '}
-          by PloneGov-BR
+          <FormattedMessage
+            id="O PortalBrasil é mantido pela comunidade"
+            defaultMessage="O PortalBrasil é mantido pela comunidade"
+          />{' '}
+          <a className="item powered-by" href="https://plone.org.br">
+            PloneGov-BR
+          </a>
         </div>
       </Container>
 

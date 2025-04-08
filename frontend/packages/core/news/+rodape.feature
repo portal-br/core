@@ -1,0 +1,1 @@
+Atualiza textos do rodapé @ericof
