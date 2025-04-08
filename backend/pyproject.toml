@@ -74,7 +74,6 @@ test = [
 ]
 
 [tool.hatch.build]
-strict-naming = false
 packages = ["src/portalbrasil",]
 
 [tool.hatch.version]
