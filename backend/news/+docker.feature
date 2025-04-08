@@ -1,0 +1,1 @@
+Gera imagens Docker base para uso das distribuições do PortalBrasil @ericof

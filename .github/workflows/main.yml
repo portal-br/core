@@ -14,6 +14,7 @@ on:
 env:
   node-version: "22.x"
   python-version: "3.12"
+  image-name-prefix: "ghcr.io/portal-br/core"
 
 jobs:
   config:
@@ -24,8 +25,11 @@ jobs:
       frontend: ${{ steps.filter.outputs.frontend }}
       python-version: ${{ env.python-version }}
       node-version: ${{ env.node-version }}
+      pb-version: ${{ steps.vars.outputs.pb-version }}
       plone-version: ${{ steps.vars.outputs.plone-version }}
       volto-version: ${{ steps.vars.outputs.volto-version }}
+      image-name-prefix: ${{ env.image-name-prefix }}
+      base-tag: ${{ steps.vars.outputs.base-tag }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,6 +37,8 @@ jobs:
       - name: Compute several vars needed for the CI
         id: vars
         run: |
+          echo "base-tag=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "pb-version=$(cat version.txt)" >> $GITHUB_OUTPUT
           echo "plone-version=$(cat backend/version.txt)" >> $GITHUB_OUTPUT
           python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("volto-version=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
 
@@ -53,7 +59,10 @@ jobs:
 
       - name: Test vars
         run: |
+          echo 'base-tag=${{ steps.vars.outputs.base-tag }}'
+          echo 'image-name-prefix=${{ env.image-name-prefix }}'
           echo 'python-version=${{ env.python-version }}'
+          echo 'pb-version=${{ steps.vars.outputs.pb-version }}'
           echo 'plone-version=${{ steps.vars.outputs.plone-version }}'
           echo 'node-version=${{ env.node-version }}'
           echo 'volto-version=${{ steps.vars.outputs.volto-version }}'
@@ -68,6 +77,9 @@ jobs:
     with:
         python-version: ${{ needs.config.outputs.python-version }}
         plone-version: ${{ needs.config.outputs.plone-version }}
+        pb-version: ${{ needs.config.outputs.plone-version }}
+        base-tag: ${{ needs.config.outputs.base-tag }}
+        image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
     if: ${{ needs.config.outputs.backend == 'true' }}
     permissions:
       contents: read
