@@ -1,0 +1,9 @@
+{
+  "site_id": "Plone",
+  "title": "PortalBrasil: Core",
+  "profile_id": "portalbrasil.core:base",
+  "distribution": "volto",
+  "setup_content": false,
+  "default_language": "pt-br",
+  "portal_timezone": "UTC"
+}

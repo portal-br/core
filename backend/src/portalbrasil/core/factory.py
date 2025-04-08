@@ -1,5 +1,5 @@
+from plone.base.interfaces.installable import INonInstallable
 from plone.distribution.api import site as site_api
-from Products.CMFPlone.interfaces import INonInstallable
 from zope.component.hooks import setSite
 from zope.interface import implementer
 
@@ -106,17 +106,17 @@ class HiddenProfiles:
 
 def add_site(
     context,
-    site_id,
-    title="PortalBrasil: Site",
-    description="",
-    profile_id=_DEFAULT_PROFILE,
-    snapshot=False,
-    content_profile_id=None,
-    extension_ids=(),
-    setup_content=None,
-    default_language="en",
-    portal_timezone="UTC",
-    distribution="volto",
+    site_id: str,
+    title: str = "PortalBrasil: Site",
+    description: str = "",
+    profile_id: str = _DEFAULT_PROFILE,
+    snapshot: bool = False,
+    content_profile_id: str | None = None,
+    extension_ids: tuple[str] = (),
+    setup_content: bool = False,
+    default_language: str = "pt-br",
+    portal_timezone: str = "UTC",
+    distribution: str = "volto",
     **kwargs,
 ):
     """Add a PloneSite to the context."""

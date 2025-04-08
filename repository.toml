@@ -13,6 +13,7 @@ name = "portalbrasil.core"
 path = "backend"
 changelog = "backend/CHANGELOG.md"
 towncrier_settings = "backend/pyproject.toml"
+base_package = "Products.CMFPlone"
 publish = true
 
 [frontend]

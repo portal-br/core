@@ -3,7 +3,7 @@
 Componentes base do PortalBrasil
 
 [![npm](https://img.shields.io/npm/v/core)](https://www.npmjs.com/package/@portalbrasil/core)
-[![Checks](https://github.com/portal-br/core/actions/workflows/main.yml/badge.svg)](https://github.com/portal-br/core/actions/workflows/main.yml)
+[![CI](https://github.com/portal-br/core/actions/workflows/main.yml/badge.svg)](https://github.com/portal-br/core/actions/workflows/main.yml)
 
 ## Features
 

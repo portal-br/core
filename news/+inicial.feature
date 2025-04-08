@@ -1,0 +1,1 @@
+Configuração inicial do repositório em github.co,/portal-br/core @ericof

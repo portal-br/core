@@ -1,10 +1,9 @@
 # PortalBrasil: Core 🚀
 
 [![Built with Cookieplone](https://img.shields.io/badge/built%20with-Cookieplone-0083be.svg?logo=cookiecutter)](https://github.com/plone/cookieplone-templates/)
-[![Backend Tests](https://github.com/portal-br/core/actions/workflows/backend.yml/badge.svg)](https://github.com/portal-br/core/actions/workflows/backend.yml)
-[![Frontend Tests](https://github.com/portal-br/core/actions/workflows/frontend.yml/badge.svg)](https://github.com/portal-br/core/actions/workflows/frontend.yml)
+[![CI](https://github.com/portal-br/core/actions/workflows/main.yml/badge.svg)](https://github.com/portal-br/core/actions/workflows/main.yml)
 
-Componentes base do PortalBrasil
+Componentes base do PortalBrasil.
 
 ## Quick Start 🏁
 
@@ -12,7 +11,7 @@ Componentes base do PortalBrasil
 
 Ensure you have the following installed:
 
-- Python 3.11 🐍
+- UV 🐍
 - Node 22 🟩
 - pnpm 🧶
 - Docker 🐳
@@ -54,45 +53,15 @@ make frontend-start
 
 Voila! Your Plone site should be live and kicking! 🎉
 
-### Local Stack Deployment 📦
-
-Deploy a local `Docker Compose` environment that includes:
-
-- Docker images for Backend and Frontend 🖼️
-- A stack with a Traefik router and a Postgres database 🗃️
-- Accessible at [http://core.localhost](http://core.localhost) 🌐
-
-Execute the following:
-
-```shell
-make stack-start
-make stack-create-site
-```
-
-And... you're all set! Your Plone site is up and running locally! 🚀
-
 ## Project Structure 🏗️
 
-This monorepo consists of three distinct sections: `backend`, `frontend`, and `devops`.
+This monorepo consists of three distinct sections: `backend` and `frontend`.
 
 - **backend**: Houses the API and Plone installation, utilizing pip instead of buildout, and includes a policy package named portalbrasil.core.
 - **frontend**: Contains the React (Volto) package.
-- **devops**: Encompasses Docker Stack, Ansible playbooks, and Cache settings.
 
-### Why This Structure? 🤔
-
-- All necessary codebases to run the site are contained within the repo (excluding existing addons for Plone and React).
-- Specific GitHub Workflows are triggered based on changes in each codebase (refer to .github/workflows).
-- Simplifies the creation of Docker images for each codebase.
-- Demonstrates Plone installation/setup without buildout.
 
 ## Code Quality Assurance 🧐
-
-To automatically format your code and ensure it adheres to quality standards, execute:
-
-```shell
-make check
-```
 
 It is possible to only run `format`:
 
@@ -105,7 +74,6 @@ or `lint`:
  ```shell
 make lint
 ```
-
 Linters can be run individually within the `backend` or `frontend` folders.
 
 ## Internationalization 🌐

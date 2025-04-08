@@ -11,6 +11,7 @@
       directory="profiles/base"
       post_handler="portalbrasil.core.setuphandlers.base.import_final_steps"
       />
+
   <genericsetup:registerProfile
       name="dependencies"
       title="PortalBrasil: Dependências obrigatórias"
