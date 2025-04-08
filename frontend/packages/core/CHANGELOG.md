@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.2 (2025-04-08)
+
+### Bugfix
+
+- Corrige problema com exibição de informações do projeto no componente VersionOverview @ericof 
+
 ## 1.0.0-alpha.1 (2025-04-08)
 
 ### Feature

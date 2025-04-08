@@ -1,6 +1,32 @@
 # Changes
 
 <!-- towncrier release notes start -->
+## 1.0.0a2 (2025-04-08)
+
+### Backend
+
+
+#### Internal:
+
+- Corrige nome do arquivo de wheel publicado no PyPI. @ericof 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Corrige problema com exibição de informações do projeto no componente VersionOverview @ericof 
+
+
+
+### Projeto
+
+Sem modificações.
+
+
+
+
 ## 1.0.0a1 (2025-04-08)
 
 ### Backend
