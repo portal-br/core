@@ -48,7 +48,7 @@ class TestMigrationToolVersions:
     @pytest.mark.parametrize(
         "key,expected",
         [
-            ["PortalBrasil", "1.0.0a0"],
+            ["PortalBrasil", __version__],
             ["PortalBrasil File System", "1000"],
             ["PortalBrasil Instance", "1000"],
             ["Zope", "5.13"],

@@ -1,3 +1,5 @@
+from portalbrasil.core import __version__
+
 import pytest
 
 
@@ -58,7 +60,7 @@ class TestSystemGet:
         (
             ("profile_version_file_system", "1000"),
             ("profile_version_installed", "1000"),
-            ("version", "1.0.0a0"),
+            ("version", __version__),
         ),
     )
     def test_portalbrasil(self, key, expected):
