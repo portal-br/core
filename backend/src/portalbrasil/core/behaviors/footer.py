@@ -11,12 +11,14 @@ import json
 
 OBJECT_LIST_DEFAULT_VALUE = []
 
-OBJECT_LIST = json.dumps({
-    "type": "array",
-    "items": {
-        "type": "object",
-    },
-})
+OBJECT_LIST = json.dumps(
+    {
+        "type": "array",
+        "items": {
+            "type": "object",
+        },
+    }
+)
 
 
 @provider(IFormFieldProvider)
@@ -27,10 +29,10 @@ class ISiteFooterCustomizationSettings(model.Schema):
         "footer",
         label=_("Footer customizations"),
         fields=[
-            "footer_links",
             "footer_logos",
             "footer_logos_container_width",
             "footer_logos_size",
+            "footer_links",
         ],
     )
 
