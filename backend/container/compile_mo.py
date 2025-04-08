@@ -41,7 +41,7 @@ def compile_po_file(po_file: Path) -> Path | None:
             with open(mo_file, "wb") as f_out:
                 try:
                     f_out.write(mo.read())
-                except (IOError, OSError):
+                except OSError:
                     logger.error(f" -- Error writing language file {mo_file}")
                     return
             logger.info(f" -- Compiled language file {mo_file}")
