@@ -1,3 +1,34 @@
 # Changes
 
 <!-- towncrier release notes start -->
+## 1.0.0a1 (2025-04-08)
+
+### Backend
+
+
+#### New features:
+
+- Adiciona Products.CMFPlone 6.1.1 como dependência @ericof 
+- Adiciona plone.distribution 3.1.2 como dependência @ericof 
+- Adiciona plonegovbr.brfields como dependência @ericof 
+- Refatora @system para retornar informações sobre o PortalBrasil e a distribuição instalada @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Adiciona @kitconcept/volto-light-theme 6.0 como dependência @ericof 
+- Altera o componente VersionOverview do `@plone/volto` para exibir informações do PortalBrasil @ericof 
+
+
+
+### Projeto
+
+
+#### Feature
+
+- Configuração inicial do repositório em github.co,/portal-br/core @ericof 
+
+

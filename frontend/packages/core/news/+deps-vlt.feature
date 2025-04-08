@@ -1,1 +1,0 @@
-Adiciona @kitconcept/volto-light-theme 6.0 como dependência @ericof

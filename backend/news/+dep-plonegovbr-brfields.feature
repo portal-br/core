@@ -1,1 +1,0 @@
-Adiciona plonegovbr.brfields como dependência @ericof

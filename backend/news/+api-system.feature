@@ -1,1 +1,0 @@
-Refatora @system para retornar informações sobre o PortalBrasil e a distribuição instalada @ericof
