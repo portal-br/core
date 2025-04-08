@@ -1,6 +1,44 @@
 # Changes
 
 <!-- towncrier release notes start -->
+## 1.0.0a3 (2025-04-08)
+
+### Backend
+
+
+#### New features:
+
+- Altera ordem dos campos no comportamento de configuração do rodapé @ericof 
+
+
+#### Bug fixes:
+
+- Refatora testes para que não quebrem após uma nova release @ericof 
+
+
+#### Tests
+
+- Disponibiliza portalbrasil.core.testing.layers.PortalBrasilDistributionFixture @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Atualiza textos do rodapé @ericof 
+
+
+
+### Projeto
+
+
+#### Internal
+
+- GHA: Adiciona workflow para changelog @ericof 
+
+
+
 ## 1.0.0a2 (2025-04-08)
 
 ### Backend

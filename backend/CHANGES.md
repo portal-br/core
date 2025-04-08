@@ -1,3 +1,20 @@
+## 1.0.0a3 (2025-04-08)
+
+
+### New features:
+
+- Altera ordem dos campos no comportamento de configuração do rodapé @ericof 
+
+
+### Bug fixes:
+
+- Refatora testes para que não quebrem após uma nova release @ericof 
+
+
+### Tests
+
+- Disponibiliza portalbrasil.core.testing.layers.PortalBrasilDistributionFixture @ericof 
+
 ## 1.0.0a2 (2025-04-08)
 
 

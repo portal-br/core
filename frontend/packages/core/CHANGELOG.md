@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.3 (2025-04-08)
+
+### Feature
+
+- Atualiza textos do rodapé @ericof 
+
 ## 1.0.0-alpha.2 (2025-04-08)
 
 ### Bugfix
