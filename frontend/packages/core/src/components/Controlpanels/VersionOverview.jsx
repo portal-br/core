@@ -7,7 +7,6 @@ import { FormattedMessage } from 'react-intl';
 import isEmpty from 'lodash/isEmpty';
 
 import voltoPackageJson from '@plone/volto/../package.json';
-import projectPackageJson from '../../../../../package.json';
 
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
@@ -96,8 +95,9 @@ const BackendInfo = (systemInformation) => {
 
 const FrontendInfo = () => {
   const intl = useIntl();
-  const { addonsInfo } = config.settings;
-  const isProject = voltoPackageJson.name !== projectPackageJson.name;
+  const { addonsInfo, projectName, projectVersion } = config.settings;
+  const isProject =
+    projectName !== undefined && voltoPackageJson.name !== projectName;
   return (
     <section className="version-group">
       <h3>Frontend</h3>
@@ -110,7 +110,7 @@ const FrontendInfo = () => {
       >
         {isProject ? (
           <li>
-            {projectPackageJson.name} {projectPackageJson.version}
+            {projectName} {projectVersion}
           </li>
         ) : null}
         {voltoVersion && <li>Volto {voltoVersion}</li>}
