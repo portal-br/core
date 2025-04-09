@@ -1,3 +1,10 @@
+## 1.0.0a4 (2025-04-09)
+
+
+### New features:
+
+- Gera imagens Docker base para uso das distribuições do PortalBrasil @ericof 
+
 ## 1.0.0a3 (2025-04-08)
 
 
