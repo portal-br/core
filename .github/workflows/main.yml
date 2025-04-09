@@ -6,69 +6,16 @@ on:
       - "backend/**"
       - "frontend/**"
       - ".github/workflows/backend.yml"
+      - ".github/workflows/config.yml"
       - ".github/workflows/docs.yml"
       - ".github/workflows/frontend.yml"
       - ".github/workflows/main.yml"
   workflow_dispatch:
 
-env:
-  node-version: "22.x"
-  python-version: "3.12"
-  image-name-prefix: "ghcr.io/portal-br/core"
-
 jobs:
   config:
-    runs-on: ubuntu-latest
-    outputs:
-      backend: ${{ steps.filter.outputs.backend }}
-      docs: ${{ steps.filter.outputs.docs }}
-      frontend: ${{ steps.filter.outputs.frontend }}
-      python-version: ${{ env.python-version }}
-      node-version: ${{ env.node-version }}
-      pb-version: ${{ steps.vars.outputs.pb-version }}
-      plone-version: ${{ steps.vars.outputs.plone-version }}
-      volto-version: ${{ steps.vars.outputs.volto-version }}
-      image-name-prefix: ${{ env.image-name-prefix }}
-      base-tag: ${{ steps.vars.outputs.base-tag }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Compute several vars needed for the CI
-        id: vars
-        run: |
-          echo "base-tag=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          echo "pb-version=$(cat version.txt)" >> $GITHUB_OUTPUT
-          echo "plone-version=$(cat backend/version.txt)" >> $GITHUB_OUTPUT
-          python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("volto-version=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
-
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            backend:
-              - 'backend/**'
-              - '.github/workflows/backend.yml'
-            docs:
-              - 'docs/**'
-              - 'README.md'
-              - '.github/workflows/docs.yml'
-            frontend:
-              - 'frontend/**'
-              - '.github/workflows/frontend.yml'
-
-      - name: Test vars
-        run: |
-          echo 'base-tag=${{ steps.vars.outputs.base-tag }}'
-          echo 'image-name-prefix=${{ env.image-name-prefix }}'
-          echo 'python-version=${{ env.python-version }}'
-          echo 'pb-version=${{ steps.vars.outputs.pb-version }}'
-          echo 'plone-version=${{ steps.vars.outputs.plone-version }}'
-          echo 'node-version=${{ env.node-version }}'
-          echo 'volto-version=${{ steps.vars.outputs.volto-version }}'
-          echo 'backend=${{ steps.filter.outputs.backend }}'
-          echo 'docs=${{ steps.filter.outputs.docs }}'
-          echo 'frontend=${{ steps.filter.outputs.frontend }}'
+    name: "Config: Compute values used in workflow"
+    uses: ./.github/workflows/config.yml
 
   backend:
     uses: ./.github/workflows/backend.yml
