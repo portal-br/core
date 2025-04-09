@@ -26,9 +26,13 @@ endif
 PLONE_SITE_ID=Plone
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 PLONE_VERSION=$(shell cat $(BACKEND_FOLDER)/version.txt)
+PB_VERSION=$(shell cat $(BACKEND_FOLDER)/../version.txt)
 
 VENV_FOLDER=$(BACKEND_FOLDER)/.venv
 BIN_FOLDER=$(VENV_FOLDER)/bin
+
+IMAGE_NAME_PREFIX=ghcr.io/portal-br/core
+IMAGE_TAG=latest
 
 # Environment variables to be exported
 export PYTHONWARNINGS := ignore
@@ -128,3 +132,13 @@ test: $(VENV_FOLDER) ## run tests
 .PHONY: test-coverage
 test-coverage: $(VENV_FOLDER) ## run tests with coverage
 	@uv run pytest --cov=portalbrasil.core --cov-report term-missing
+
+###########################################
+# Docker Images
+###########################################
+.PHONY: build-image
+build-image:  ## Build Docker Images
+	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-builder:$(IMAGE_TAG) $(RESET)"
+	@docker build . -t $(IMAGE_NAME_PREFIX)-builder:$(IMAGE_TAG) -f Dockerfile.builder --build-arg PB_VERSION=$(PB_VERSION)
+	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-prod:$(IMAGE_TAG) $(RESET)"
+	@docker build . -t $(IMAGE_NAME_PREFIX)-prod:$(IMAGE_TAG) -f Dockerfile.prod --build-arg PB_VERSION=$(PB_VERSION)
