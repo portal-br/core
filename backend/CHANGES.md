@@ -1,3 +1,11 @@
+## 1.0.0a5 (2025-04-09)
+
+
+### Bug fixes:
+
+- Passa o profile_id `portalbrasil.core:base` durante a criação de um novo site @ericof [#2](https://github.com/portal-br/core/issues/2)
+- Imagem ghcr.io/portal-br/core-prod: Seta variável CHAMELEON_CACHE com valor de /data/cache @ericof [#3](https://github.com/portal-br/core/issues/3)
+
 ## 1.0.0a4 (2025-04-09)
 
 

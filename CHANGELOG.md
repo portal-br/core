@@ -1,6 +1,32 @@
 # Changes
 
 <!-- towncrier release notes start -->
+## 1.0.0a5 (2025-04-09)
+
+### Backend
+
+
+#### Bug fixes:
+
+- Passa o profile_id `portalbrasil.core:base` durante a criação de um novo site @ericof [#2](https://github.com/portal-br/core/issues/2)
+- Imagem ghcr.io/portal-br/core-prod: Seta variável CHAMELEON_CACHE com valor de /data/cache @ericof [#3](https://github.com/portal-br/core/issues/3)
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Projeto
+
+
+#### Internal
+
+- Atualiza versão da action docker/build-push-action de v5 para v6 @ericof 
+
+
+
 ## 1.0.0a4 (2025-04-09)
 
 ### Backend
