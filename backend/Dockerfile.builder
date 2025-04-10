@@ -28,10 +28,7 @@ ENV UV_LINK_MODE=copy \
 COPY /container/compile_mo.py /compile_mo.py
 
 # Copy default structure for a Plone Project
-COPY /container/skeleton/etc /app/etc
-COPY /container/skeleton/scripts /app/scripts
-COPY /container/skeleton/docker-entrypoint.sh /app/
-COPY /container/skeleton/inituser /app/
+COPY /container/skeleton /app
 
 LABEL maintainer="PloneGov-BR <gov@plone.org.br>" \
       org.label-schema.name="ghcr.io/portal-br/core-builder" \

@@ -7,7 +7,7 @@ ARG PB_VERSION
 SHELL ["sh", "-exc"]
 
 LABEL maintainer="PloneGov-BR <gov@plone.org.br>" \
-      org.label-schema.name="ghcr.io/portal-br/core-prod-conf" \
+      org.label-schema.name="ghcr.io/portal-br/core-prod" \
       org.label-schema.description="PortalBrasil $PB_VERSION production image with Python $PYTHON_VERSION" \
       org.label-schema.vendor="PloneGov-BR"
 
@@ -27,8 +27,10 @@ EOT
 
 # Disable debug mode
 ENV DEBUG_MODE=off
+
 # Set chameleon cache directory
-ENV CHAMELEON_CACHE=/app/var/cache
+ENV CHAMELEON_CACHE=/data/cache
+
 # Disable compilation of po files into mo files (This should be done in the builder image)
 ENV zope_i18n_compile_mo_files=
 
