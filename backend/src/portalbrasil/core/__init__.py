@@ -9,6 +9,9 @@ __version__ = "1.0.0a5"
 
 PACKAGE_NAME = "portalbrasil.core"
 FRIENDLY_NAME = "PortalBrasil"
+DEFAULT_PROFILE = f"{PACKAGE_NAME}:base"
+CMF_DEPENDENCIES_PROFILE = f"{PACKAGE_NAME}:cmfdependencies"
+DEPENDENCIES_PROFILE = f"{PACKAGE_NAME}:dependencies"
 
 _ = MessageFactory(PACKAGE_NAME)
 

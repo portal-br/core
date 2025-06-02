@@ -1,4 +1,5 @@
 from plone.distribution.core import Distribution
+from portalbrasil.core import __version__
 from portalbrasil.core.utils import distributions as dist_utils
 
 import pytest
@@ -12,15 +13,15 @@ class TestUtilsDistributions:
     def test_current_distribution(self):
         result = dist_utils.current_distribution()
         assert isinstance(result, Distribution)
-        assert result.name == "volto"
+        assert result.name == "testing"
 
     @pytest.mark.parametrize(
         "key,expected",
         [
-            ("name", "volto"),
-            ("title", "Plone Site (Volto)"),
-            ("package_name", "plone.volto"),
-            ("package_version", "5.0.4"),
+            ("name", "testing"),
+            ("title", "portalbrasil.core"),
+            ("package_name", "portalbrasil.core.testing"),
+            ("package_version", __version__),
         ],
     )
     def test_distribution_info(self, key, expected):

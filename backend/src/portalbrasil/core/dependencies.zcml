@@ -7,6 +7,8 @@
   <include package="Products.CMFPlone" />
   <include package="plone.restapi" />
   <include package="plone.volto" />
+  <include package="collective.volto.formsupport" />
   <include package="plonegovbr.brfields" />
+  <include package="plonegovbr.socialmedia" />
 
 </configure>

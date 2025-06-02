@@ -16,30 +16,50 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
-#. Default: "Add link"
-#: components/Widgets/schema/socialNetworksSchema
-msgid "Add link"
-msgstr "Adiciona link"
-
 #. Default: "Add-ons"
 #: components/Controlpanels/VersionOverview
 msgid "Add-ons"
 msgstr "Complementos"
 
+#. Default: "Back"
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Back"
+msgstr "Voltar"
+
+#. Default: "Configuration Versions"
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Configuration Versions"
+msgstr "Versões de Configuração"
+
 #. Default: "Criado com PortalBrasil, Plone & Python"
-#: components/Footer/Footer
+#: components/Footer/slots/Copyright
 msgid "Criado com PortalBrasil, Plone & Python"
 msgstr "Criado com PortalBrasil, Plone & Python"
+
+#. Default: "Current active configuration"
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Current active configuration"
+msgstr "Configuração ativa atualmente"
+
+#. Default: "Dry run selected, transaction aborted."
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Dry run selected, transaction aborted."
+msgstr "Simulação selecionada, transação abortada."
+
+#. Default: "Redes Sociais"
+#: messages
+msgid "Follow us:"
+msgstr "Redes Sociais"
 
 #. Default: "Home"
 #: components/Logo/Logo
 msgid "Home"
 msgstr "Capa"
 
-#. Default: "Link"
-#: components/Widgets/schema/socialNetworksSchema
-msgid "Link"
-msgstr "Link"
+#. Default: "Latest available configuration"
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Latest available configuration"
+msgstr "Última configuração disponível"
 
 #. Default: "List with images"
 #: index
@@ -51,10 +71,10 @@ msgstr "Lista com imagens"
 msgid "Logo of"
 msgstr "Logo de"
 
-#. Default: "Network"
-#: components/Widgets/schema/socialNetworksSchema
-msgid "Network"
-msgstr "Rede"
+#. Default: "More information about the upgrade procedure can be found in the documentation section of plone.org in the Upgrade Guide."
+#: components/Controlpanels/UpgradeControlPanel
+msgid "More information about the upgrade procedure can be found in the documentation section of plone.org in the Upgrade Guide."
+msgstr "Mais informações sobre o procedimento de atualização podem ser encontradas na seção de documentação do plone.org no Guia de Atualização."
 
 #. Default: "No addons found"
 #: components/Controlpanels/VersionOverview
@@ -62,26 +82,86 @@ msgid "No addons found"
 msgstr "Nenhum complemento foi encontrado"
 
 #. Default: "O PortalBrasil é mantido pela comunidade"
-#: components/Footer/Footer
+#: components/Footer/slots/Copyright
 msgid "O PortalBrasil é mantido pela comunidade"
 msgstr "O PortalBrasil é mantido pela comunidade"
 
-#. Default: "Open in a new tab"
-#: components/Widgets/schema/socialNetworksSchema
-msgid "Open in a new tab"
-msgstr "Abrir em uma nova aba"
+#. Default: "Package Version"
+#: components/Controlpanels/VersionOverview
+msgid "Package Version"
+msgstr "Versão do Pacote"
 
-#. Default: "Target"
-#: components/Widgets/schema/socialNetworksSchema
-msgid "Target"
-msgstr "Endereço"
+#. Default: "Please ensure you have a backup of your site before performing the upgrade."
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Please ensure you have a backup of your site before performing the upgrade."
+msgstr "Por favor, certifique-se de ter um backup do seu site antes de realizar a atualização."
 
-#. Default: "Title"
-#: components/Widgets/schema/socialNetworksSchema
-msgid "Title"
-msgstr "Título"
+#. Default: "Profile Version (File system)"
+#: components/Controlpanels/VersionOverview
+msgid "Profile Version (File system)"
+msgstr "Versão do Perfil (Sistema de Arquivos)"
+
+#. Default: "Profile Version (Installed)"
+#: components/Controlpanels/VersionOverview
+msgid "Profile Version (Installed)"
+msgstr "Versão do Perfil (Instalado)"
+
+#. Default: "The following list shows which upgrade steps are going to be run. Upgrading sometimes performs a catalog/security update, which may take a long time on large sites. Be patient."
+#: components/Controlpanels/UpgradeControlPanel
+msgid "The following list shows which upgrade steps are going to be run. Upgrading sometimes performs a catalog/security update, which may take a long time on large sites. Be patient."
+msgstr "A listagem a seguir mostra quais etapas de atualização serão executadas. A atualização às vezes executa uma atualização de catálogo/segurança, o que pode levar muito tempo em sites grandes. Seja paciente."
+
+#. Default: "The site configuration is outdated and needs to be upgraded."
+#: components/Controlpanels/UpgradeControlPanel
+msgid "The site configuration is outdated and needs to be upgraded."
+msgstr "A configuração do site está desatualizada e precisa ser atualizada."
+
+#. Default: "There was an error with the upgrade."
+#: components/Controlpanels/UpgradeControlPanel
+msgid "There was an error with the upgrade."
+msgstr "Ocorreu um erro com a atualização."
+
+#. Default: "Upgrade"
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Upgrade"
+msgstr "Atualização"
+
+#. Default: "Upgrade Plone Site"
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Upgrade Plone Site"
+msgstr "Atualizar Site"
+
+#. Default: "Upgrade Report"
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Upgrade Report"
+msgstr "Relatório da atualização"
+
+#. Default: "Upgrade Steps"
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Upgrade Steps"
+msgstr "Passos de atualização"
+
+#. Default: "Upgrade portalbrasil.core"
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Upgrade portalbrasil.core"
+msgstr "Atualizar o PortalBrasil"
+
+#. Default: "Upgrade your Site"
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Upgrade your Site"
+msgstr "Atualizar seu site"
+
+#. Default: "Version Overview"
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Version Overview"
+msgstr "Visão geral das versões do Portal"
 
 #. Default: "You are running in 'debug mode'. This mode is intended for sites that are under development. This allows many configuration changes to be immediately visible, but will make your site run more slowly. To turn off debug mode, stop the server, set 'debug-mode=off' in your buildout.cfg, re-run bin/buildout and then restart the server process."
 #: components/Controlpanels/VersionOverview
 msgid "Warning Regarding debug mode"
 msgstr "Você está rodando em 'modo de depuração'. Esse modo é recomendado apenas para sites ainda em desenvolvimento. Ele permite várias alterações de configuração serem aplicadas imediatamente, mas faz seu site rodar de maneira mais lenta."
+
+#. Default: "Your site is up to date."
+#: components/Controlpanels/UpgradeControlPanel
+msgid "Your site is up to date."
+msgstr "Seu site está atualizado."

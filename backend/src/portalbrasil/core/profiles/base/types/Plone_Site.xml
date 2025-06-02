@@ -41,7 +41,7 @@
     <element value="plone.tableofcontents" />
     <element value="portalbrasil.header" />
     <element value="portalbrasil.footer" />
-    <element value="portalbrasil.social_networks" />
+    <element value="plonegovbr.socialmedia.settings" />
     <element value="volto.blocks" />
     <element value="volto.preview_image" />
   </property>

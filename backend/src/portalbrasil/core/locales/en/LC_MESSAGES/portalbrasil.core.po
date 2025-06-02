@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-04-05 19:28+0000\n"
+"POT-Creation-Date: 2025-06-02 17:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,8 +50,12 @@ msgstr ""
 msgid "Footer logos size"
 msgstr ""
 
-#: portalbrasil/core/profiles.zcml:21
-msgid "Perfil com as dependências necessárias ao funcionamento do PortalBrasil"
+#: portalbrasil/core/profiles.zcml:22
+msgid "Perfil com as dependências do framework base do PortalBrasil"
+msgstr ""
+
+#: portalbrasil/core/profiles.zcml:31
+msgid "Perfil com as dependências obrigatórias do PortalBrasil"
 msgstr ""
 
 #: portalbrasil/core/profiles.zcml:13
@@ -74,7 +78,11 @@ msgstr ""
 msgid "PortalBrasil: Configurações base"
 msgstr ""
 
-#: portalbrasil/core/profiles.zcml:21
+#: portalbrasil/core/profiles.zcml:22
+msgid "PortalBrasil: Dependências Framework"
+msgstr ""
+
+#: portalbrasil/core/profiles.zcml:31
 msgid "PortalBrasil: Dependências obrigatórias"
 msgstr ""
 

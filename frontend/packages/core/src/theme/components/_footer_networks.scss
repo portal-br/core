@@ -1,0 +1,17 @@
+.container.footer_follow_us {
+  @include default-container-width();
+  .footer_follow_us.title {
+    text-align: left;
+    @include add(size, s);
+    @include add(height, m);
+    @include add(weight, bold);
+  }
+  ul.social-networks li.item {
+    &:first-child {
+      padding-left: 0px;
+    }
+    .icon.social-network {
+      height: 20px !important;
+    }
+  }
+}

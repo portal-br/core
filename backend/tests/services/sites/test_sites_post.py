@@ -19,7 +19,7 @@ class TestSitesPost:
         self.api_session = api_manager_request
 
     def test_post(self, answers):
-        distribution_name = "volto"
+        distribution_name = "testing"
         response = self.api_session.post(f"@sites/{distribution_name}", json=answers)
         data = response.json()
         assert response.status_code == 200

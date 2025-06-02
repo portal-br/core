@@ -11,7 +11,7 @@ from plone.testing import zope
 from zope.globalrequest import setRequest
 
 
-PLONE_SITE_TITLE = "PortalBrasil Site"
+PLONE_SITE_TITLE = "portalbrasil Site"
 
 
 class PortalBrasilFixture(PloneFixture):
@@ -19,6 +19,7 @@ class PortalBrasilFixture(PloneFixture):
     internal_packages: tuple[str] = (
         "plone.restapi",
         "plone.volto",
+        "portalbrasil.core.testing",
     )
 
     @property
@@ -46,6 +47,7 @@ class PortalBrasilFixture(PloneFixture):
             title=PLONE_SITE_TITLE,
             setup_content=False,
             default_language=DEFAULT_LANGUAGE,
+            distribution="testing",
             extension_ids=self.extensionProfiles,
         )
         pas = app[PLONE_SITE_ID]["acl_users"]
