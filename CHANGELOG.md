@@ -1,6 +1,30 @@
 # Changes
 
 <!-- towncrier release notes start -->
+## 1.0.0a7 (2025-06-02)
+
+### Backend
+
+Sem modificações.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Corrige mapeamento de propriedades utilizadas pelos logos do rodapé. @ericof 
+
+
+
+### Projeto
+
+Sem modificações.
+
+
+
+
 ## 1.0.0a6 (2025-06-02)
 
 ### Backend

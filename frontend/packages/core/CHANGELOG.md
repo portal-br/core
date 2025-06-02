@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.7 (2025-06-02)
+
+### Bugfix
+
+- Corrige mapeamento de propriedades utilizadas pelos logos do rodapé. @ericof 
+
 ## 1.0.0-alpha.6 (2025-06-02)
 
 ### Feature
