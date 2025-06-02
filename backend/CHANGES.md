@@ -1,3 +1,22 @@
+## 1.0.0a6 (2025-06-02)
+
+
+### New features:
+
+- Adiciona plonegovbr.socialmedia como dependência @ericof [#5](https://github.com/portal-br/core/issues/5)
+- Adiciona `collective.volto.formsupport` como dependência. @ericof 
+
+
+### Bug fixes:
+
+- Corrige erro com a portal_migration quando acessada via ClassicUI. @ericof 
+
+
+### Internal:
+
+- Atualiza arquivos de tradução. @ericof 
+- Atualiza plone.restapi para versão 9.14.0. @ericof 
+
 ## 1.0.0a5 (2025-04-09)
 
 

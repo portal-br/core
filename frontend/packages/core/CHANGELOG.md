@@ -8,6 +8,25 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.6 (2025-06-02)
+
+### Feature
+
+- Adiciona dependência @plonegovbr/volto-social-media e remove @plonegovbr/volto-network-block @ericof [#5](https://github.com/portal-br/core/issue/5)
+- Adiciona `@plone-collective/volto-authomatic` como dependência. @ericof 
+- Atualiza @plone/volto para versão 18.22.0. @ericof 
+- Atualiza `@kitconcept/volto-light-theme` para versão 6.2.0. @ericof 
+- Atualiza `@kitconcept/volto-social-blocks` para versão 1.0.0-alpha.8. @ericof 
+- Atualiza `@plonegovbr/volto-social-media` para versão 2.0.0-alpha.5. @ericof 
+
+### Bugfix
+
+- Corrige o componente `UpgradeControlPanel`. @ericof 
+
+### Internal
+
+- Atualiza arquivos de tradução. @ericof 
+
 ## 1.0.0-alpha.5 (2025-04-09)
 
 ## 1.0.0-alpha.4 (2025-04-09)

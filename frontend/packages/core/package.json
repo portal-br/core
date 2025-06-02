@@ -1,6 +1,6 @@
 {
   "name": "@portalbrasil/core",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "Componentes base do PortalBrasil",
   "main": "src/index.ts",
   "license": "MIT",

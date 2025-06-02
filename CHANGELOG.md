@@ -1,6 +1,59 @@
 # Changes
 
 <!-- towncrier release notes start -->
+## 1.0.0a6 (2025-06-02)
+
+### Backend
+
+
+#### New features:
+
+- Adiciona plonegovbr.socialmedia como dependência @ericof [#5](https://github.com/portal-br/core/issues/5)
+- Adiciona `collective.volto.formsupport` como dependência. @ericof 
+
+
+#### Bug fixes:
+
+- Corrige erro com a portal_migration quando acessada via ClassicUI. @ericof 
+
+
+#### Internal:
+
+- Atualiza arquivos de tradução. @ericof 
+- Atualiza plone.restapi para versão 9.14.0. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Adiciona dependência @plonegovbr/volto-social-media e remove @plonegovbr/volto-network-block @ericof [#5](https://github.com/portal-br/core/issue/5)
+- Adiciona `@plone-collective/volto-authomatic` como dependência. @ericof 
+- Atualiza @plone/volto para versão 18.22.0. @ericof 
+- Atualiza `@kitconcept/volto-light-theme` para versão 6.2.0. @ericof 
+- Atualiza `@kitconcept/volto-social-blocks` para versão 1.0.0-alpha.8. @ericof 
+- Atualiza `@plonegovbr/volto-social-media` para versão 2.0.0-alpha.5. @ericof 
+
+#### Bugfix
+
+- Corrige o componente `UpgradeControlPanel`. @ericof 
+
+#### Internal
+
+- Atualiza arquivos de tradução. @ericof 
+
+
+
+### Projeto
+
+
+#### Internal
+
+- Utiliza workflows compartilhados em plone/meta. @ericof 
+
+
+
 ## 1.0.0a5 (2025-04-09)
 
 ### Backend
