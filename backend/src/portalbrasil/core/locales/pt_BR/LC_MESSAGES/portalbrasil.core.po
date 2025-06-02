@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-04-05 19:28+0000\n"
+"POT-Creation-Date: 2025-06-02 17:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,19 +16,19 @@ msgstr ""
 
 #: portalbrasil/core/behaviors/header.py:29
 msgid "Cabeçalho"
-msgstr ""
+msgstr "Cabeçalho"
 
 #: portalbrasil/core/behaviors/configure.zcml:19
 msgid "Configuração para cabeçalhos de sites e sub-sites"
-msgstr ""
+msgstr "Configuração para cabeçalhos de sites e sub-sites"
 
 #: portalbrasil/core/behaviors/configure.zcml:31
 msgid "Configuração para redes sociais para sites e sub-sites"
-msgstr ""
+msgstr "Configuração para redes sociais para sites e sub-sites (Depreciado)"
 
 #: portalbrasil/core/behaviors/configure.zcml:25
 msgid "Configuração para rodapé de sites e sub-sites"
-msgstr ""
+msgstr "Configuração para rodapé de sites e sub-sites"
 
 #: portalbrasil/core/behaviors/footer.py:28
 msgid "Footer customizations"
@@ -50,33 +50,41 @@ msgstr "Largura do container para as logos"
 msgid "Footer logos size"
 msgstr "Tamanho das logos"
 
-#: portalbrasil/core/profiles.zcml:21
-msgid "Perfil com as dependências necessárias ao funcionamento do PortalBrasil"
-msgstr ""
+#: portalbrasil/core/profiles.zcml:22
+msgid "Perfil com as dependências do framework base do PortalBrasil"
+msgstr "Perfil com as dependências do framework base do PortalBrasil"
+
+#: portalbrasil/core/profiles.zcml:31
+msgid "Perfil com as dependências obrigatórias do PortalBrasil"
+msgstr "Perfil com as dependências obrigatórias do PortalBrasil"
 
 #: portalbrasil/core/profiles.zcml:13
 msgid "Perfil com configurações base para projetos baseados no PortalBrasil"
-msgstr ""
+msgstr "Perfil com configurações base para projetos baseados no PortalBrasil"
 
 #: portalbrasil/core/behaviors/configure.zcml:31
 msgid "PortalBrasil: Configuração de Redes Sociais"
-msgstr ""
+msgstr "PortalBrasil: Configuração de Redes Sociais"
 
 #: portalbrasil/core/behaviors/configure.zcml:25
 msgid "PortalBrasil: Configuração de Rodapé"
-msgstr ""
+msgstr "PortalBrasil: Configuração de Rodapé"
 
 #: portalbrasil/core/behaviors/configure.zcml:19
 msgid "PortalBrasil: Configuração de cabeçalho"
-msgstr ""
+msgstr "PortalBrasil: Configuração de cabeçalho"
 
 #: portalbrasil/core/profiles.zcml:13
 msgid "PortalBrasil: Configurações base"
-msgstr ""
+msgstr "PortalBrasil: Configurações base"
 
-#: portalbrasil/core/profiles.zcml:21
+#: portalbrasil/core/profiles.zcml:22
+msgid "PortalBrasil: Dependências Framework"
+msgstr "PortalBrasil: Dependências Framework"
+
+#: portalbrasil/core/profiles.zcml:31
 msgid "PortalBrasil: Dependências obrigatórias"
-msgstr ""
+msgstr "PortalBrasil: Dependências obrigatórias"
 
 #: portalbrasil/core/behaviors/header.py:64
 msgid "Site Actions"

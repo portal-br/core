@@ -1,11 +1,16 @@
 from plone.base.interfaces.installable import INonInstallable
 from plone.distribution.api import site as site_api
+from portalbrasil.core import CMF_DEPENDENCIES_PROFILE
+from portalbrasil.core import DEFAULT_PROFILE
+from portalbrasil.core import DEPENDENCIES_PROFILE
+from portalbrasil.core import PACKAGE_NAME
+from portalbrasil.core.interfaces import IAddonList
+from Products.CMFPlone.MigrationTool import Addon
+from Products.CMFPlone.MigrationTool import AddonList
 from zope.component.hooks import setSite
 from zope.interface import implementer
 
 
-_DEFAULT_PROFILE = "portalbrasil.core:base"
-_DEPENDENCIES_PROFILE = "portalbrasil.core:dependencies"
 _PLONE_PACKAGES = [
     "CMFDefault",
     "Products.CMFDefault",
@@ -91,17 +96,61 @@ _PLONE_PROFILES = [
     "plone.volto:default",
     "plonegovbr.brfields:default",
     "plonegovbr.brfields:demo",
+    "plonegovbr.socialmedia:default",
+    "plonegovbr.socialmedia:demo",
 ]
 
 
 @implementer(INonInstallable)
 class HiddenProfiles:
     def getNonInstallableProducts(self):
-        return [*_PLONE_PACKAGES]
+        return [PACKAGE_NAME, *_PLONE_PACKAGES]
 
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller."""
-        return [_DEFAULT_PROFILE, _DEPENDENCIES_PROFILE, *_PLONE_PROFILES]
+        return [
+            DEFAULT_PROFILE,
+            CMF_DEPENDENCIES_PROFILE,
+            DEPENDENCIES_PROFILE,
+            *_PLONE_PROFILES,
+        ]
+
+
+@implementer(IAddonList)
+class LocalAddonList:
+    addon_list: AddonList = AddonList([
+        Addon(profile_id="Products.CMFEditions:CMFEditions"),
+        Addon(
+            profile_id="Products.CMFPlacefulWorkflow:CMFPlacefulWorkflow",
+            check_module="Products.CMFPlacefulWorkflow",
+        ),
+        Addon(profile_id="Products.PlonePAS:PlonePAS"),
+        Addon(profile_id="plone.app.caching:default", check_module="plone.app.caching"),
+        Addon(profile_id="plone.app.contenttypes:default"),
+        Addon(profile_id="plone.app.dexterity:default"),
+        Addon(
+            profile_id="plone.app.discussion:default",
+            check_module="plone.app.discussion",
+        ),
+        Addon(profile_id="plone.app.event:default"),
+        Addon(profile_id="plone.app.iterate:default", check_module="plone.app.iterate"),
+        Addon(
+            profile_id="plone.app.multilingual:default",
+            check_module="plone.app.multilingual",
+        ),
+        Addon(profile_id="plone.app.querystring:default"),
+        Addon(profile_id="plone.app.theming:default"),
+        Addon(profile_id="plone.app.users:default"),
+        Addon(profile_id="plone.restapi:default"),
+        Addon(profile_id="plone.session:default"),
+        Addon(profile_id="plone.staticresources:default"),
+        Addon(profile_id="plone.volto:default"),
+        Addon(profile_id="plonetheme.barceloneta:default"),
+        Addon(profile_id="collective.volto.formsupport:default"),
+        Addon(profile_id="plonegovbr.socialmedia:default"),
+        Addon(profile_id="plonegovbr.brfields:default"),
+        Addon(profile_id="portalbrasil.core:dependencies"),
+    ])
 
 
 def add_site(
@@ -109,7 +158,7 @@ def add_site(
     site_id: str,
     title: str = "PortalBrasil: Site",
     description: str = "",
-    profile_id: str = _DEFAULT_PROFILE,
+    profile_id: str = DEFAULT_PROFILE,
     snapshot: bool = False,
     content_profile_id: str | None = None,
     extension_ids: tuple[str] = (),

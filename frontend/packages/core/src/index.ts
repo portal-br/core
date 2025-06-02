@@ -3,7 +3,7 @@ import type { ConfigType } from '@plone/registry';
 import { defineMessages } from 'react-intl';
 
 import installSettings from './config/settings';
-import installWidgets from './config/widgets';
+import installSlots from './config/slots';
 
 defineMessages({
   listWithImages: {
@@ -14,7 +14,7 @@ defineMessages({
 
 const applyConfig = (config: ConfigType) => {
   installSettings(config);
-  installWidgets(config);
+  installSlots(config);
   return config;
 };
 

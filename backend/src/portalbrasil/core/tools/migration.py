@@ -1,26 +1,33 @@
+from AccessControl import ClassSecurityInfo
 from AccessControl.class_init import InitializeClass
 from App.config import getConfiguration
 from collections.abc import Generator
 from contextlib import contextmanager
 from io import StringIO
-from plone import api
 from plone.base.interfaces import IMigrationTool
-from portalbrasil.core import FRIENDLY_NAME
-from portalbrasil.core import __version__
+from portalbrasil.core.interfaces import IAddonList
 from portalbrasil.core.utils import gs as gs_utils
-from portalbrasil.core.utils import packages as pkg_utils
+from Products.CMFCore.permissions import ManagePortal
+from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.utils import registerToolInterface
-from Products.CMFPlone.MigrationTool import Addon
 from Products.CMFPlone.MigrationTool import AddonList
 from Products.CMFPlone.MigrationTool import MigrationTool as BaseTool
 from Products.GenericSetup.tool import SetupTool
 from typing import Any
 from ZODB.POSException import ConflictError
+from zope.component import getUtility
 from zope.interface import implementer
 
 import logging
+import pkg_resources
 import sys
 import transaction
+
+
+def package_version(package_name: str) -> str:
+    """Return the version of an installed package."""
+    package_dist = pkg_resources.get_distribution(package_name)
+    return package_dist.version
 
 
 @contextmanager
@@ -40,50 +47,31 @@ def get_logger(stream: StringIO) -> Generator[logging.Logger]:
         gslogger.removeHandler(handler)
 
 
-ADDON_LIST = AddonList([
-    Addon(profile_id="Products.CMFEditions:CMFEditions"),
-    Addon(
-        profile_id="Products.CMFPlacefulWorkflow:CMFPlacefulWorkflow",
-        check_module="Products.CMFPlacefulWorkflow",
-    ),
-    Addon(profile_id="Products.PlonePAS:PlonePAS"),
-    Addon(profile_id="plone.app.caching:default", check_module="plone.app.caching"),
-    Addon(profile_id="plone.app.contenttypes:default"),
-    Addon(profile_id="plone.app.dexterity:default"),
-    Addon(
-        profile_id="plone.app.discussion:default",
-        check_module="plone.app.discussion",
-    ),
-    Addon(profile_id="plone.app.event:default"),
-    Addon(profile_id="plone.app.iterate:default", check_module="plone.app.iterate"),
-    Addon(
-        profile_id="plone.app.multilingual:default",
-        check_module="plone.app.multilingual",
-    ),
-    Addon(profile_id="plone.app.querystring:default"),
-    Addon(profile_id="plone.app.theming:default"),
-    Addon(profile_id="plone.app.users:default"),
-    Addon(profile_id="plone.restapi:default"),
-    Addon(profile_id="plone.session:default"),
-    Addon(profile_id="plone.staticresources:default"),
-    Addon(profile_id="plone.volto:default"),
-    Addon(profile_id="plonetheme.barceloneta:default"),
-    Addon(profile_id="plonegovbr.brfields:default"),
-])
-
-
 @implementer(IMigrationTool)
 class MigrationTool(BaseTool):
-    profile: str = "portalbrasil.core:base"
-    package_name: str = "portalbrasil.core"
+    profile: str = ""
+    package_name: str = ""
+    security = ClassSecurityInfo()
+
+    def get_setup_tool(self) -> SetupTool:
+        return getToolByName(self, "portal_setup")
 
     @property
-    def setup(self) -> SetupTool:
-        return api.portal.get_tool("portal_setup")
+    def addon_list(self) -> AddonList:
+        utility = getUtility(IAddonList, self.package_name)
+        return utility.addon_list
+
+    security.declareProtected(ManagePortal, "initializeTool")
+
+    def initializeTool(self, profile: str, package_name: str):
+        self.profile = profile
+        self.package_name = package_name
+
+    security.declareProtected(ManagePortal, "getInstanceVersion")
 
     def getInstanceVersion(self) -> str:
         # The version this instance of plone is on.
-        setup = self.setup
+        setup = self.get_setup_tool()
         version = setup.getLastVersionForProfile(self.profile)
         if isinstance(version, tuple):
             version = ".".join(version)
@@ -103,14 +91,12 @@ class MigrationTool(BaseTool):
         return version
 
     def setInstanceVersion(self, version: str) -> None:
-        # The version this instance of portalbrasil.core is on.
-        setup = self.setup
+        setup = self.get_setup_tool()
         setup.setLastVersionForProfile(self.profile, version)
         self._version = False
 
     def getFileSystemVersion(self) -> str | None:
-        # The version this instance of portalbrasil.core is on.
-        setup = self.setup
+        setup = self.get_setup_tool()
         try:
             return setup.getVersionForProfile(self.profile)
         except KeyError:
@@ -119,10 +105,10 @@ class MigrationTool(BaseTool):
 
     def getSoftwareVersion(self) -> str:
         # The software version.
-        return __version__
+        return package_version(self.package_name)
 
     def listUpgrades(self):
-        setup = self.setup
+        setup = self.get_setup_tool()
         fs_version = self.getFileSystemVersion()
         upgrades = setup.listUpgrades(self.profile, dest=fs_version)
         return upgrades
@@ -139,27 +125,34 @@ class MigrationTool(BaseTool):
 
     def coreVersions(self) -> dict[str, Any]:
         # Useful core information.
-        plone_version = pkg_utils.package_version("Products.CMFPlone")
+        plone_version = package_version("Products.CMFPlone")
+        instance_version = self.getInstanceVersion()
+        fs_version = self.getFileSystemVersion()
         return {
             "Python": sys.version,
-            "Zope": pkg_utils.package_version("Zope"),
+            "Zope": package_version("Zope"),
             "Platform": sys.platform,
-            f"{FRIENDLY_NAME}": self.getSoftwareVersion(),
-            f"{FRIENDLY_NAME} Instance": self.getInstanceVersion(),
-            f"{FRIENDLY_NAME} File System": self.getFileSystemVersion(),
-            "plone.restapi": pkg_utils.package_version("plone.restapi"),
-            "plone.volto": pkg_utils.package_version("plone.volto"),
+            "plone.restapi": package_version("plone.restapi"),
+            "plone.volto": package_version("plone.volto"),
             "CMFPlone": plone_version,
             "Plone": plone_version,
-            "CMF": pkg_utils.package_version("Products.CMFCore"),
+            "Plone Instance": instance_version,
+            "Plone File System": fs_version,
+            "CMF": package_version("Products.CMFCore"),
             "Debug mode": "Yes" if getConfiguration().debug_mode else "No",
-            "PIL": pkg_utils.package_version("pillow"),
+            "PIL": package_version("pillow"),
+            "core": {
+                "name": self.package_name,
+                "package_version": self.getSoftwareVersion(),
+                "instance_version": instance_version,
+                "fs_version": fs_version,
+            },
         }
 
     def _upgrade_run_steps(
         self, steps: list, logger: logging.Logger, swallow_errors: bool
     ) -> None:
-        setup = self.setup
+        setup = self.get_setup_tool()
         for step in steps:
             try:
                 step_title = step["title"]
@@ -240,7 +233,7 @@ class MigrationTool(BaseTool):
                 logger.error("Migration has failed")
             else:
                 logger.info("Starting upgrade of core addons.")
-                ADDON_LIST.upgrade_all(self)
+                self.addon_list.upgrade_all(self)
                 logger.info("Done upgrading core addons.")
 
                 # do this once all the changes have been done

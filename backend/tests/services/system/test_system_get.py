@@ -1,3 +1,4 @@
+from portalbrasil.core import PACKAGE_NAME
 from portalbrasil.core import __version__
 
 import pytest
@@ -10,8 +11,9 @@ def portal(portal_class):
 
 class TestSystemGet:
     @pytest.fixture(autouse=True)
-    def _setup(self, api_manager_request):
+    def _setup(self, api_manager_request, current_versions):
         self.api_session = api_manager_request
+        self.profile_version = current_versions.base
 
     def test_response_type(self):
         response = self.api_session.get("/@system")
@@ -29,7 +31,7 @@ class TestSystemGet:
             ("plone_restapi_version", str),
             ("plone_version", str),
             ("plone_volto_version", str),
-            ("portalbrasil", dict),
+            ("core", dict),
             ("python_version", str),
             ("upgrade", bool),
         ),
@@ -45,7 +47,7 @@ class TestSystemGet:
         (
             ("cmf_version", "3.7"),
             ("debug_mode", "No"),
-            ("plone_restapi_version", "9.13.3"),
+            ("plone_restapi_version", "9.14.0"),
             ("plone_version", "6.1.1"),
             ("upgrade", False),
         ),
@@ -58,22 +60,26 @@ class TestSystemGet:
     @pytest.mark.parametrize(
         "key,expected",
         (
-            ("profile_version_file_system", "1000"),
-            ("profile_version_installed", "1000"),
+            ("profile_version_file_system", "current_profile_version"),
+            ("profile_version_installed", "current_profile_version"),
+            ("name", PACKAGE_NAME),
             ("version", __version__),
         ),
     )
-    def test_portalbrasil(self, key, expected):
+    def test_kitconcept_core(self, key, expected):
+        expected = (
+            self.profile_version if expected == "current_profile_version" else expected
+        )
         response = self.api_session.get("/@system")
         data = response.json()
-        assert data["portalbrasil"][key] == expected
+        assert data["core"][key] == expected
 
     @pytest.mark.parametrize(
         "key,expected",
         (
-            ("name", "volto"),
-            ("package_name", "plone.volto"),
-            ("title", "Plone Site (Volto)"),
+            ("name", "testing"),
+            ("package_name", "portalbrasil.core.testing"),
+            ("title", "portalbrasil.core"),
         ),
     )
     def test_distribution(self, key, expected):

@@ -1,6 +1,5 @@
 from plone import api
 from plone.restapi.services import Service
-from portalbrasil.core import FRIENDLY_NAME
 from portalbrasil.core.tools.migration import MigrationTool
 from portalbrasil.core.utils.distributions import distribution_info
 
@@ -9,13 +8,17 @@ class SystemGet(Service):
     def reply(self) -> dict:
         migration_tool: MigrationTool = api.portal.get_tool("portal_migration")
         core_versions = migration_tool.coreVersions()
-        gs_fs = core_versions.get(f"{FRIENDLY_NAME} File System")
-        gs_instance = core_versions.get(f"{FRIENDLY_NAME} Instance")
+        core_info = core_versions["core"]
+        gs_fs = core_info.get("fs_version")
+        gs_instance = core_info.get("instance_version")
+        package_version = core_info.get("package_version")
+        package_name = core_info.get("name")
         return {
             "@id": f"{self.context.absolute_url()}/@system",
             "distribution": distribution_info(),
-            "portalbrasil": {
-                "version": core_versions.get("PortalBrasil"),
+            "core": {
+                "name": package_name,
+                "version": package_version,
                 "profile_version_installed": gs_instance,
                 "profile_version_file_system": gs_fs,
             },

@@ -1,7 +1,3 @@
-/**
- * Version Overview component.
- * @module components/manage/Controlpanels/VersionOverview
- */
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import isEmpty from 'lodash/isEmpty';
@@ -53,13 +49,18 @@ const BackendInfo = (systemInformation) => {
     debug_mode,
     pil_version,
     plone_version,
-    pb_version,
-    pb_gs_metadata_version_installed,
+    core,
     plone_restapi_version,
     plone_volto_version,
     python_version,
     zope_version,
   } = systemInformation;
+  const {
+    name,
+    version,
+    profile_version_installed,
+    profile_version_file_system,
+  } = core;
   return (
     <section className="version-group">
       <h3>Backend</h3>
@@ -71,7 +72,30 @@ const BackendInfo = (systemInformation) => {
         }}
       >
         <li>
-          PortalBrasil {pb_version} ({pb_gs_metadata_version_installed})
+          {name}
+          <ul>
+            <li>
+              <FormattedMessage
+                id="Package Version"
+                defaultMessage="Package Version"
+              />
+              : {version}
+            </li>
+            <li>
+              <FormattedMessage
+                id="Profile Version (Installed)"
+                defaultMessage="Profile Version (Installed)"
+              />
+              : {profile_version_installed}
+            </li>
+            <li>
+              <FormattedMessage
+                id="Profile Version (File system)"
+                defaultMessage="Profile Version (File system)"
+              />
+              : {profile_version_file_system}
+            </li>
+          </ul>
         </li>
         <li>Plone {plone_version}</li>
         <li>plone.volto {plone_volto_version}</li>

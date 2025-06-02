@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="portalbrasil"
+    >
+
+  <plone:distribution
+      name="testing"
+      title="portalbrasil.core"
+      description="Distribuição utilizada para testes."
+      directory="distributions/testing"
+      />
+
+</configure>

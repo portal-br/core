@@ -17,13 +17,13 @@ FIXTURE = Layer()
 
 INTEGRATION_TESTING = IntegrationTesting(
     bases=(FIXTURE,),
-    name="Portalbrasil.CoreLayer:IntegrationTesting",
+    name="portalbrasil.coreLayer:IntegrationTesting",
 )
 
 
 FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE, WSGI_SERVER_FIXTURE),
-    name="Portalbrasil.CoreLayer:FunctionalTesting",
+    name="portalbrasil.coreLayer:FunctionalTesting",
 )
 
 
@@ -33,5 +33,5 @@ ACCEPTANCE_TESTING = FunctionalTesting(
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         WSGI_SERVER_FIXTURE,
     ),
-    name="Portalbrasil.CoreLayer:AcceptanceTesting",
+    name="portalbrasil.coreLayer:AcceptanceTesting",
 )

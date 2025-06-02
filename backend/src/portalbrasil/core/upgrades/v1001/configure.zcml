@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="portalbrasil.core:base"
+      source="1000"
+      destination="1001"
+      >
+    <genericsetup:upgradeStep
+        title="Instala plonegovbr.socialmedia"
+        handler=".instala_socialmedia"
+        />
+    <genericsetup:upgradeStep
+        title="Remove behavior portalbrasil.social_networks do tipo Plone Site"
+        handler=".remove_behavior_social_networks"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>

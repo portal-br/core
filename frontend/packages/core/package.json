@@ -36,20 +36,22 @@
     "@kitconcept/volto-separator-block",
     "@kitconcept/volto-button-block",
     "@plonegovbr/volto-vlibras",
-    "@plonegovbr/volto-network-block",
     "@plonegovbr/volto-brwidgets",
+    "@plonegovbr/volto-social-media",
+    "@plone-collective/volto-authomatic",
     "@kitconcept/volto-light-theme"
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
-    "@kitconcept/volto-light-theme": "6.0.0-alpha.21",
-    "@kitconcept/volto-social-blocks": "1.0.0-alpha.4",
+    "@plone-collective/volto-authomatic": "3.0.0-alpha.2",
+    "@kitconcept/volto-light-theme": "6.2.0",
+    "@kitconcept/volto-social-blocks": "1.0.0-alpha.8",
     "@plonegovbr/volto-brwidgets": "1.0.0-alpha.3",
-    "@plonegovbr/volto-network-block": "1.0.0",
+    "@plonegovbr/volto-social-media": "^2.0.0-alpha.5",
     "@plonegovbr/volto-vlibras": "0.4.1",
     "@mbarde/volto-image-crop-widget": "0.5.1",
     "@eeacms/volto-pdf-block": "1.0.12",
-    "volto-form-block": "^3.11.0"
+    "volto-form-block": "^3.13.0"
   },
   "peerDependencies": {
     "react": "18.2.0",

@@ -39,7 +39,7 @@ export default function install(config: ConfigType) {
       GET_CONTENT: ['inherit'],
       querystring: {
         'expand.inherit.behaviors':
-          'portalbrasil.header,portalbrasil.footer,portalbrasil.social_networks',
+          'portalbrasil.header,portalbrasil.footer,plonegovbr.socialmedia.settings',
       },
     },
   ];
