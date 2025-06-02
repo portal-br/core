@@ -27,10 +27,10 @@ const FooterLogos = () => {
 
   const footer_logos_size = useLiveData<
     SiteFooterSettings['footer_logos_size']
-  >(content, 'voltolighttheme.footer', 'footer_logos_size');
+  >(content, 'portalbrasil.footer', 'footer_logos_size');
   const footer_logos_container_width = useLiveData<
     SiteFooterSettings['footer_logos_container_width']
-  >(content, 'voltolighttheme.footer', 'footer_logos_container_width');
+  >(content, 'portalbrasil.footer', 'footer_logos_container_width');
 
   return footer_logos?.length > 0 ? (
     <LogosContainer
