@@ -4,12 +4,9 @@ on:
   push:
     paths:
       - "backend/**"
+      - "docs/**"
       - "frontend/**"
-      - ".github/workflows/backend.yml"
-      - ".github/workflows/config.yml"
-      - ".github/workflows/docs.yml"
-      - ".github/workflows/frontend.yml"
-      - ".github/workflows/main.yml"
+      - ".github/workflows/*.yml"
   workflow_dispatch:
 
 jobs:
