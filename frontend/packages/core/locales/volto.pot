@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-06-02T17:21:03.347Z\n"
+"POT-Creation-Date: 2025-06-04T19:12:32.229Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -21,6 +21,11 @@ msgstr ""
 #. Default: "Back"
 #: components/Controlpanels/UpgradeControlPanel
 msgid "Back"
+msgstr ""
+
+#. Default: "Close menu"
+#: messages
+msgid "Close menu"
 msgstr ""
 
 #. Default: "Configuration Versions"
@@ -58,11 +63,6 @@ msgstr ""
 msgid "Latest available configuration"
 msgstr ""
 
-#. Default: "List with images"
-#: index
-msgid "List with images"
-msgstr ""
-
 #. Default: "Logo of"
 #: components/Logo/Logo
 msgid "Logo of"
@@ -81,6 +81,11 @@ msgstr ""
 #. Default: "O PortalBrasil é mantido pela comunidade"
 #: components/Footer/slots/Copyright
 msgid "O PortalBrasil é mantido pela comunidade"
+msgstr ""
+
+#. Default: "Open menu"
+#: messages
+msgid "Open menu"
 msgstr ""
 
 #. Default: "Package Version"
