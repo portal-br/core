@@ -12,9 +12,9 @@ class TestSetupInstall:
 
         assert IBrowserLayer in browser_layers
 
-    def test_latest_version(self, profile_last_version):
+    def test_latest_version(self, profile_last_version, current_versions):
         """Test latest version of default profile."""
-        assert profile_last_version(f"{PACKAGE_NAME}:base") == "1001"
+        assert profile_last_version(f"{PACKAGE_NAME}:base") == current_versions.base
 
     def test_base_profile(self, setup_tool):
         """Test if we have the base profile."""

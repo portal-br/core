@@ -3,8 +3,8 @@ from plone.dexterity.fti import DexterityFTI
 import pytest
 
 
-class TestCTPloneSite:
-    portal_type: str = "Plone Site"
+class TestContentTypeFTI:
+    portal_type: str = "News Item"
 
     @pytest.fixture(autouse=True)
     def _setup(self, portal, get_fti):
@@ -14,9 +14,9 @@ class TestCTPloneSite:
     @pytest.mark.parametrize(
         "attr,expected",
         [
-            ("title", "Plone Site"),
-            ("klass", "Products.CMFPlone.Portal.PloneSite"),
-            ("global_allow", False),
+            ("title", "News Item"),
+            ("klass", "plone.volto.content.FolderishNewsItem"),
+            ("global_allow", True),
         ],
     )
     def test_fti(self, attr: str, expected):
@@ -29,18 +29,21 @@ class TestCTPloneSite:
     @pytest.mark.parametrize(
         "name,expected",
         [
-            ("plone.dublincore", True),
-            ("plone.richtext", False),
-            ("plone.relateditems", True),
-            ("plone.locking", True),
-            ("plone.excludefromnavigation", True),
-            ("plone.tableofcontents", True),
-            ("portalbrasil.header", True),
-            ("portalbrasil.footer", True),
-            ("portalbrasil.social_networks", False),
-            ("plonegovbr.socialmedia", False),
-            ("volto.blocks", True),
+            ("plone.basic", True),
             ("volto.preview_image_link", True),
+            ("plone.categorization", True),
+            ("plone.publication", True),
+            ("plone.ownership", True),
+            ("plone.shortname", True),
+            ("volto.navtitle", True),
+            ("plone.excludefromnavigation", True),
+            ("plone.relateditems", True),
+            ("volto.blocks", True),
+            ("plone.constraintypes", True),
+            ("plone.namefromtitle", True),
+            ("plone.locking", True),
+            ("plone.versioning", True),
+            ("plone.translatable", True),
         ],
     )
     def test_behavior(self, name: str, expected: bool):

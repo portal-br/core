@@ -5,9 +5,9 @@ import pytest
 
 class TestCTAvailable:
     @pytest.fixture(autouse=True)
-    def _setup(self, portal_class):
-        self.portal = portal_class
-        self.types_tool: TypesTool = portal_class.portal_types
+    def _setup(self, portal):
+        self.portal = portal
+        self.types_tool: TypesTool = portal.portal_types
 
     @pytest.mark.parametrize(
         "portal_type,title,klass,addable",
