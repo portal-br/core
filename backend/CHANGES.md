@@ -1,3 +1,17 @@
+## 1.0.0a8 (2025-06-04)
+
+
+### New features:
+
+- Adiciona o comportamento de título de navegação a todos os tipos de conteúdo. @ericof [#7](https://github.com/portal-br/core/issues/7)
+- Atualiza plonegovbr.socialmedia para versão 2.0.0a6 @ericof [#12](https://github.com/portal-br/core/issues/12)
+- Adiciona suporte ao versionamento de tipos de conteúdos. @ericof 
+
+
+### Internal:
+
+- Registra distribuições que dependem deste pacote para serem atualizadas. @ericof 
+
 ## 1.0.0a7 (2025-06-02)
 
 Sem modificações.

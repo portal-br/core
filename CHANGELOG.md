@@ -1,6 +1,46 @@
 # Changes
 
 <!-- towncrier release notes start -->
+## 1.0.0a8 (2025-06-04)
+
+### Backend
+
+
+#### New features:
+
+- Adiciona o comportamento de título de navegação a todos os tipos de conteúdo. @ericof [#7](https://github.com/portal-br/core/issues/7)
+- Atualiza plonegovbr.socialmedia para versão 2.0.0a6 @ericof [#12](https://github.com/portal-br/core/issues/12)
+- Adiciona suporte ao versionamento de tipos de conteúdos. @ericof 
+
+
+#### Internal:
+
+- Registra distribuições que dependem deste pacote para serem atualizadas. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Visualizador de PDF na visão padrão de arquivo. @ericof [#9](https://github.com/portal-br/core/issue/9)
+- Atualiza @kitconcept/volto-light-theme para versão 7.0.0-alpha.7 @ericof [#10](https://github.com/portal-br/core/issue/10)
+- Atualiza @plone-collective/volto-authomatic para versão 3.0.0-alpha.3 @ericof [#11](https://github.com/portal-br/core/issue/11)
+- Atualiza @plonegovbr/volto-social-media para versão 2.0.0-alpha.6 @ericof [#12](https://github.com/portal-br/core/issue/12)
+
+#### Bugfix
+
+- Corrige exibição do menu expandido. @ericof [#8](https://github.com/portal-br/core/issue/8)
+
+
+
+### Projeto
+
+Sem modificações.
+
+
+
+
 ## 1.0.0a7 (2025-06-02)
 
 ### Backend

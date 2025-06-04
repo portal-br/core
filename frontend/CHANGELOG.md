@@ -8,6 +8,19 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.8 (2025-06-04)
+
+### Feature
+
+- Visualizador de PDF na visão padrão de arquivo. @ericof [#9](https://github.com/portal-br/core/issue/9)
+- Atualiza @kitconcept/volto-light-theme para versão 7.0.0-alpha.7 @ericof [#10](https://github.com/portal-br/core/issue/10)
+- Atualiza @plone-collective/volto-authomatic para versão 3.0.0-alpha.3 @ericof [#11](https://github.com/portal-br/core/issue/11)
+- Atualiza @plonegovbr/volto-social-media para versão 2.0.0-alpha.6 @ericof [#12](https://github.com/portal-br/core/issue/12)
+
+### Bugfix
+
+- Corrige exibição do menu expandido. @ericof [#8](https://github.com/portal-br/core/issue/8)
+
 ## 1.0.0-alpha.7 (2025-06-02)
 
 ### Bugfix
