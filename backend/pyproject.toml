@@ -38,7 +38,7 @@ dependencies = [
     "collective.volto.formsupport==3.2.3",
     "collective.honeypot",
     "plonegovbr.brfields==1.0.0a3",
-    "plonegovbr.socialmedia==2.0.0a2",
+    "plonegovbr.socialmedia==2.0.0a6",
 ]
 
 [project.optional-dependencies]

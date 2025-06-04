@@ -26,6 +26,11 @@ msgstr "Complementos"
 msgid "Back"
 msgstr "Voltar"
 
+#. Default: "Close menu"
+#: messages
+msgid "Close menu"
+msgstr "Fechar menu"
+
 #. Default: "Configuration Versions"
 #: components/Controlpanels/UpgradeControlPanel
 msgid "Configuration Versions"
@@ -61,11 +66,6 @@ msgstr "Capa"
 msgid "Latest available configuration"
 msgstr "Última configuração disponível"
 
-#. Default: "List with images"
-#: index
-msgid "List with images"
-msgstr "Lista com imagens"
-
 #. Default: "Logo of"
 #: components/Logo/Logo
 msgid "Logo of"
@@ -85,6 +85,11 @@ msgstr "Nenhum complemento foi encontrado"
 #: components/Footer/slots/Copyright
 msgid "O PortalBrasil é mantido pela comunidade"
 msgstr "O PortalBrasil é mantido pela comunidade"
+
+#. Default: "Open menu"
+#: messages
+msgid "Open menu"
+msgstr "Abrir menu"
 
 #. Default: "Package Version"
 #: components/Controlpanels/VersionOverview

@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="portalbrasil.core:base"
+      source="1001"
+      destination="1002"
+      >
+    <genericsetup:upgradeDepends
+        title="Adiciona o comportamento de título de navegação aos tipos de conteúdo padrão"
+        import_profile="profile-portalbrasil.core:dependencies"
+        import_steps="repositorytool typeinfo"
+        />
+    <genericsetup:upgradeDepends
+        title="Suporta versionamento para os tipos de conteúdo padrão"
+        import_profile="profile-portalbrasil.core:dependencies"
+        import_steps="repositorytool"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>

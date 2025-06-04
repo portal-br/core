@@ -3816,7 +3816,7 @@ wheels = [
 
 [[package]]
 name = "plonegovbr-socialmedia"
-version = "2.0.0a2"
+version = "2.0.0a6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -3824,9 +3824,9 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9a/18/45b7d20abe0eca6005d661d83e067f0404332c313aaa279937c9e522950a/plonegovbr_socialmedia-2.0.0a2.tar.gz", hash = "sha256:7e397361f99c9c302bd2a7696493e13213790238e344b0898ab20f482f875140", size = 27478 }
+sdist = { url = "https://files.pythonhosted.org/packages/49/e1/c33db489696cbda39fe3938154a95d08fc933dbc0dd09abe1a05f5787451/plonegovbr_socialmedia-2.0.0a6.tar.gz", hash = "sha256:4853f13f921328d2063b50d58f541e97bafc35cfbfa99422bc29d94072c6e95d", size = 27562 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b1/cd/ff5966ee141516748854a81d1ce8dabdf2dae5abd7494856444652e7dafc/plonegovbr_socialmedia-2.0.0a2-py3-none-any.whl", hash = "sha256:c1068df8c6eb43fe266aa5090cec7ebc0e072ae51fc5c249fa1ac01916fee0e2", size = 37581 },
+    { url = "https://files.pythonhosted.org/packages/4f/0d/4c194f04583aef1fd523af2eb398bed709f9dc7268816b993cda2f35a6b1/plonegovbr_socialmedia-2.0.0a6-py3-none-any.whl", hash = "sha256:4fddbef1304dd08feeaee42b85065ffdb6c4f08588ac35fe8716e80f78ce511a", size = 37595 },
 ]
 
 [[package]]
@@ -3918,7 +3918,7 @@ requires-dist = [
     { name = "plone-restapi", extras = ["test"], marker = "extra == 'test'" },
     { name = "plone-volto" },
     { name = "plonegovbr-brfields", specifier = "==1.0.0a3" },
-    { name = "plonegovbr-socialmedia", specifier = "==2.0.0a2" },
+    { name = "plonegovbr-socialmedia", specifier = "==2.0.0a6" },
     { name = "products-cmfplone", specifier = "==6.1.1" },
     { name = "pytest", marker = "extra == 'test'" },
     { name = "pytest-cov", marker = "extra == 'test'" },

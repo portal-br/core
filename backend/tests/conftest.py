@@ -32,7 +32,7 @@ def current_versions() -> CurrentVersions:
     from portalbrasil.core import __version__
 
     return CurrentVersions(
-        base="1001",
+        base="1002",
         dependencies="1000",
         package=__version__,
     )

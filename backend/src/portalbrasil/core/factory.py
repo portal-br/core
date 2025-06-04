@@ -100,6 +100,11 @@ _PLONE_PROFILES = [
     "plonegovbr.socialmedia:demo",
 ]
 
+_DISTRIBUTION_PROFILES = [
+    "portalbrasil.legislativo:default",
+    "portalbrasil.intranet:default",
+]
+
 
 @implementer(INonInstallable)
 class HiddenProfiles:
@@ -113,6 +118,7 @@ class HiddenProfiles:
             CMF_DEPENDENCIES_PROFILE,
             DEPENDENCIES_PROFILE,
             *_PLONE_PROFILES,
+            *_DISTRIBUTION_PROFILES,
         ]
 
 
@@ -150,6 +156,15 @@ class LocalAddonList:
         Addon(profile_id="plonegovbr.socialmedia:default"),
         Addon(profile_id="plonegovbr.brfields:default"),
         Addon(profile_id="portalbrasil.core:dependencies"),
+        # Distributions and profiles
+        Addon(
+            profile_id="portalbrasil.legislativo:default",
+            check_module="portalbrasil.legislativo",
+        ),
+        Addon(
+            profile_id="portalbrasil.intranet:default",
+            check_module="portalbrasil.intranet",
+        ),
     ])
 
 
